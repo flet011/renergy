@@ -1,0 +1,265 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "meta": \{\
+    "schema_name": "pkp_schema_zip_as_stock",\
+    "schema_version": "1.1.0",\
+    "domain": "real estate",\
+    "description": "Treat each ZIP code as a 'stock' with a thesis, fundamentals, catalysts, risks, and an investability score for cultural, walkable, undervalued towns (e.g., Paducah, KY).",\
+    "owner": "PKP",\
+    "created_at": "2025-08-19",\
+    "updated_at": "2025-08-19",\
+    "tags": ["zip-as-ticker", "small-town", "cultural", "walkable", "value-investing"]\
+  \},\
+\
+  "node": \{\
+    "id": "zip",\
+    "id_type": "US_ZIP5",\
+    "label_fields": ["city", "state"],\
+    "thesis_field": "thesis",\
+    "entity_type": "geography",\
+    "geo_fields": \{\
+      "city": "string",\
+      "state": "string",\
+      "county": "string",\
+      "msa": "string",\
+      "lat": "number",\
+      "lng": "number"\
+    \},\
+    "status_field": "recommendation",\
+    "lifecycle": ["seed_watch", "accumulate", "hold", "trim", "exit"]\
+  \},\
+\
+  "fields": \{\
+    "thesis": \{\
+      "type": "string",\
+      "example": "Vibrant river town with historic core, arts institutions, and improving amenity stack; undervalued relative to regional peers."\
+    \},\
+\
+    "fundamentals": \{\
+      "median_price": \{"type": "number", "unit": "USD"\},\
+      "price_1y_change_pct": \{"type": "number", "unit": "pct"\},\
+      "price_3y_change_pct": \{"type": "number", "unit": "pct"\},\
+      "dom_median_days": \{"type": "number", "unit": "days"\},\
+      "months_inventory": \{"type": "number", "unit": "months"\},\
+      "transactions_12m": \{"type": "number"\},\
+      "rent_longterm_median": \{"type": "number", "unit": "USD/mo"\},\
+      "rent_to_price_pct": \{"type": "number", "unit": "pct"\},\
+      "cap_rate_est_pct": \{"type": "number", "unit": "pct"\},\
+      "property_tax_rate_pct": \{"type": "number", "unit": "pct"\},\
+      "insurance_cost_est_pct": \{"type": "number", "unit": "pct_of_value"\}\
+    \},\
+\
+    "short_term_rental": \{\
+      "str_allowed_flag": \{"type": "boolean"\},\
+      "str_rule_risk_level": \{"type": "string", "enum": ["low", "medium", "high"]\},\
+      "airbnb_adr_est": \{"type": "number", "unit": "USD"\},\
+      "airbnb_occ_est_pct": \{"type": "number", "unit": "pct"\},\
+      "airbnb_revpar_est": \{"type": "number", "unit": "USD"\},\
+      "str_sentiment": \{"type": "string", "enum": ["friendly", "neutral", "hostile"]\}\
+    \},\
+\
+    "amenities_culture": \{\
+      "walkscore": \{"type": "number", "unit": "0-100"\},\
+      "bike_score": \{"type": "number", "unit": "0-100"\},\
+      "arts_institutions_count": \{"type": "number"\},\
+      "historic_district_flag": \{"type": "boolean"\},\
+      "downtown_overlay_flag": \{"type": "boolean"\},\
+      "waterfront_flag": \{"type": "boolean"\},\
+      "university_within_15mi_flag": \{"type": "boolean"\},\
+      "hospital_anchor_flag": \{"type": "boolean"\},\
+      "airport_within_90min_flag": \{"type": "boolean"\},\
+      "fiber_internet_flag": \{"type": "boolean"\},\
+      "events_festival_density": \{"type": "number", "description": "Major events per year within ZIP or adjacent"\}\
+    \},\
+\
+    "demographics_econ": \{\
+      "population": \{"type": "number"\},\
+      "population_5y_change_pct": \{"type": "number", "unit": "pct"\},\
+      "median_income": \{"type": "number", "unit": "USD"\},\
+      "edu_bachelors_or_higher_pct": \{"type": "number", "unit": "pct"\},\
+      "jobs_diversity_index": \{"type": "number", "unit": "0-1"\},\
+      "industry_concentration_hhi": \{"type": "number", "unit": "0-1"\}\
+    \},\
+\
+    "risk": \{\
+      "crime_index_rel_us": \{"type": "number", "unit": "0-100"\},\
+      "flood_risk_score": \{"type": "number", "unit": "0-100"\},\
+      "tornado_risk_score": \{"type": "number", "unit": "0-100"\},\
+      "climate_30y_risk_composite": \{"type": "number", "unit": "0-100"\},\
+      "economic_volatility_score": \{"type": "number", "unit": "0-100"\},\
+      "regulatory_landlord_friendliness": \{"type": "number", "unit": "0-100"\},\
+      "insurance_availability_risk": \{"type": "number", "unit": "0-100"\}\
+    \},\
+\
+    "comps_context": \{\
+      "region_median_price": \{"type": "number", "unit": "USD"\},\
+      "price_to_region_ratio": \{"type": "number", "description": "Median home value / Region median"\},\
+      "rent_to_region_ratio": \{"type": "number"\},\
+      "cap_rate_vs_region_bps": \{"type": "number", "unit": "bps"\}\
+    \},\
+\
+    "signals": \{\
+      "infra_grants_last_24m": \{"type": "number"\},\
+      "new_employers_last_24m": \{"type": "number"\},\
+      "press_mentions_last_12m": \{"type": "number"\},\
+      "zoning_change_events": \{"type": "number"\},\
+      "downtown_redev_sqft_pipeline": \{"type": "number", "unit": "sqft"\}\
+    \},\
+\
+    "notes": \{"type": "array", "items": \{"type": "string"\}\}\
+  \},\
+\
+  "derived": \{\
+    "value_score": \{\
+      "description": "Relative cheapness adjusted for rent and taxes.",\
+      "formula": "zscore(-median_price) * 0.4 + zscore(rent_to_price_pct) * 0.4 + zscore(-property_tax_rate_pct) * 0.2",\
+      "range": "approx zscore"\
+    \},\
+    "income_score": \{\
+      "description": "Durable cashflow potential (LTR + STR).",\
+      "formula": "zscore(cap_rate_est_pct) * 0.6 + zscore(airbnb_revpar_est) * 0.2 + zscore(airbnb_occ_est_pct) * 0.2",\
+      "range": "approx zscore"\
+    \},\
+    "liquidity_score": \{\
+      "description": "How tradable the ZIP is (time-on-market & volume).",\
+      "formula": "zscore(-dom_median_days) * 0.6 + zscore(transactions_12m) * 0.4",\
+      "range": "approx zscore"\
+    \},\
+    "cultural_magnet_score": \{\
+      "description": "Arts + walkability + anchors.",\
+      "formula": "zscore(walkscore) * 0.35 + zscore(arts_institutions_count) * 0.25 + 0.15*bool(historic_district_flag) + 0.1*bool(university_within_15mi_flag) + 0.1*bool(hospital_anchor_flag) + 0.05*bool(waterfront_flag)",\
+      "range": "0-~3"\
+    \},\
+    "momentum_score": \{\
+      "description": "Price and population momentum plus pipeline signals.",\
+      "formula": "zscore(price_1y_change_pct) * 0.4 + zscore(population_5y_change_pct) * 0.3 + zscore(infra_grants_last_24m) * 0.15 + zscore(downtown_redev_sqft_pipeline) * 0.15",\
+      "range": "approx zscore"\
+    \},\
+    "risk_penalty": \{\
+      "description": "Composite downside adjustment (higher is worse).",\
+      "formula": "norm(crime_index_rel_us) * 0.25 + norm(flood_risk_score) * 0.25 + norm(tornado_risk_score) * 0.15 + norm(climate_30y_risk_composite) * 0.15 + norm(economic_volatility_score) * 0.1 + norm(insurance_availability_risk) * 0.1",\
+      "range": "0-1"\
+    \},\
+    "overall_investability_score": \{\
+      "description": "Primary ranker for buy/hold decisions (0-100).",\
+      "formula": "scale_to_0_100( 0.28*value_score + 0.22*income_score + 0.15*liquidity_score + 0.2*cultural_magnet_score + 0.15*momentum_score - 0.35*risk_penalty )",\
+      "range": "0-100"\
+    \}\
+  \},\
+\
+  "recommendation_rules": \{\
+    "buy": \{\
+      "threshold_min": 70,\
+      "guards": [\
+        "property_tax_rate_pct <= 1.6",\
+        "insurance_cost_est_pct <= 0.6",\
+        "regulatory_landlord_friendliness >= 55",\
+        "str_rule_risk_level != 'high'"\
+      ]\
+    \},\
+    "accumulate": \{\
+      "range": [62, 70],\
+      "comment": "Build position on weakness; prioritize walkable cores."\
+    \},\
+    "hold": \{\
+      "range": [50, 62],\
+      "comment": "Income-first posture; DRIP via cashflows."\
+    \},\
+    "watch": \{\
+      "range": [40, 50],\
+      "comment": "Track catalysts; wait for entry (inventory spikes, DOM up)."\
+    \},\
+    "avoid_or_exit": \{\
+      "threshold_max": 40,\
+      "comment": "Only special situations (deep value, near-term catalyst)."\
+    \}\
+  \},\
+\
+  "position_sizing": \{\
+    "max_weight_per_zip_pct": 8,\
+    "target_weights": \{\
+      "buy": 5,\
+      "accumulate": 3,\
+      "hold": 2,\
+      "watch": 0.5,\
+      "avoid_or_exit": 0\
+    \},\
+    "liquidity_adjustment": "Reduce target weight by up to 40% if liquidity_score < 0 (below median).",\
+    "concentration_rules": \{\
+      "per_state_cap_pct": 30,\
+      "per_county_cap_pct": 18\
+    \}\
+  \},\
+\
+  "alerts_triggers": \{\
+    "price_momentum_breakout": \{\
+      "condition": "price_1y_change_pct >= region_price_1y_change_pct + 300bps",\
+      "action": "Re-run momentum_score and recommendation."\
+    \},\
+    "inventory_spike": \{\
+      "condition": "months_inventory >= 6",\
+      "action": "Flag as potential entry if fundamentals stable."\
+    \},\
+    "reg_change": \{\
+      "condition": "str_rule_risk_level changes OR regulatory_landlord_friendliness drops > 10pts",\
+      "action": "Immediate review; cap new capital."\
+    \},\
+    "risk_event": \{\
+      "condition": "flood/tornado/climate scores jump > 15%",\
+      "action": "Recompute risk_penalty; consider trim."\
+    \}\
+  \},\
+\
+  "data_sources": \{\
+    "pricing_sales": ["Redfin ZIP-level stats", "Zillow ZHVI"],\
+    "rent_long_term": ["HUD Fair Market Rents", "Zumper", "ApartmentList"],\
+    "short_term_rental": ["AirDNA (ADR/Occ/RevPAR)", "InsideAirbnb (where available)"],\
+    "amenities_walkability": ["WalkScore", "OpenStreetMap POI density", "local tourism calendars"],\
+    "demographics_econ": ["US Census ACS 5-year", "BLS QCEW", "BEA"],\
+    "risk_climate": ["FEMA Flood Map", "First Street Foundation", "NOAA Storm Events"],\
+    "regulatory": ["Municipal code + STR ordinance scraping", "State landlord-tenant law summaries"],\
+    "signals_news": ["Local newspapers", "City RFP/RFQ portals", "EDA/Infrastructure grants"]\
+  \},\
+\
+  "null_handling": \{\
+    "imputation": \{\
+      "cap_rate_est_pct": "median_by_county",\
+      "walkscore": "nearest_downtown_buffer_mean",\
+      "airbnb_adr_est": "adjacent_zip_weighted_mean"\
+    \},\
+    "confidence": \{\
+      "low_data_penalty": "reduce overall_investability_score by up to 5 points when >20% of key fields are imputed"\
+    \}\
+  \},\
+\
+  "presentation": \{\
+    "ticker_card_fields": [\
+      "zip", "city", "state",\
+      "thesis",\
+      "overall_investability_score",\
+      "recommendation",\
+      "median_price",\
+      "rent_to_price_pct",\
+      "cap_rate_est_pct",\
+      "walkscore",\
+      "cultural_magnet_score",\
+      "risk_penalty"\
+    ],\
+    "badges": \{\
+      "cultural_small_cap": "walkscore >= 70 OR arts_institutions_count >= 3",\
+      "legacy_dividend": "cap_rate_est_pct >= 7 AND momentum_score < 0",\
+      "spec_growth": "population_5y_change_pct >= 3 AND price_to_region_ratio <= 0.85"\
+    \}\
+  \},\
+\
+  "defaults": \{\
+    "thesis_template": "Vibrant, culturally anchored town with intact historic core and improving amenity stack; priced below regional medians with positive cashflow profile.",\
+    "recommendation": "watch"\
+  \}\
+\}}

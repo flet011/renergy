@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+  </style>
+</head>
+<body>
+<p class="p1">{</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"meta": {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"schema_version": "1.0.0",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"domain": "capital_markets",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"created_at": "2025-08-19T00:00:00Z",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"author": "synapse-user",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"confidence": 0.6</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"node": {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"id": "XPO",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"name": "XPO Logistics, Inc.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"type": "company",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"layer": "application",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"thesis": "Logistics operator with leverage to e-commerce and last-mile; watch fuel, automation, and contract wins.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"time_horizon": "6-12m"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"context": {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"picks_shovels": [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"id":"PLD","name":"Prologis","role":"industrial_reit","edge_type":"enables","weight":0.6},</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"id":"TRMB","name":"Trimble","role":"telematics","edge_type":"enables","weight":0.5}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"edges": [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"from":"XPO","to":"COST","type":"serves","weight":0.5}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"undercurrents": [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"name":"fuel_prices","direction":"rising","rationale":"diesel volatility impacts margins"}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"signals": {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"metrics": [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"name":"operating_margin","unit":"%","current":6.3,"thresholds":{"bull":"&gt;=7","bear":"&lt;5"}}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>"events": [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{"date":"2025-08-01","type":"earnings","impact":"=","source":"IR"}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>]</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"news": [],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"risks": [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{"name":"fuel_cost_spike","likelihood":"med","severity":"med","leading_indicators":["EIA diesel &gt; $4.25/gal"]}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"actions": [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{"type":"alert","what":"fuel_spike","rule":"source:EIA AND diesel_weekly_change&gt;=5%","notify":"slack:#markets"}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"valuation": {},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"sources": [</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{"name":"Investor Relations","url":"https://investors.xpo.com"}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>],</p>
+<p class="p1"><span class="Apple-converted-space">  </span>"custom": {}</p>
+<p class="p1">}</p>
+</body>
+</html>

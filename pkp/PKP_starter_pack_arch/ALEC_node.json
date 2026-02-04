@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "meta": \{\
+    "schema_version": "1.0.0",\
+    "domain": "capital_markets",\
+    "created_at": "2025-08-18",\
+    "author": "pkp",\
+    "confidence": 0.78\
+  \},\
+  "node": \{\
+    "id": "ALEC",\
+    "name": "Alector, Inc.",\
+    "type": "company",\
+    "layer": "application",\
+    "thesis": "Late-stage neuro pipeline (latozinemab for FTD-GRN) is the key catalyst; cash runway appears adequate into 2H 2027 while the company heads toward pivotal data.",\
+    "time_horizon": "12m"\
+  \},\
+  "context": \{\
+    "picks_shovels": [\
+      \{"id":"ICLR","name":"ICON","role":"CRO (trial ops)","edge_type":"enables","weight":0.6\},\
+      \{"id":"IQV","name":"IQVIA","role":"CRO/data","edge_type":"enables","weight":0.5\},\
+      \{"id":"CTLT","name":"Catalent","role":"biologics mfg","edge_type":"manufactures_for","weight":0.5\},\
+      \{"id":"TMO","name":"Thermo Fisher","role":"assay/biomarkers","edge_type":"supplies","weight":0.5\},\
+      \{"id":"VEEV","name":"Veeva","role":"reg/clinical stack","edge_type":"enables","weight":0.4\}\
+    ],\
+    "edges": [\
+      \{"from":"ALEC","to":"GSK","type":"collaborates_with","weight":0.7\},\
+      \{"from":"ALEC","to":"ABBV","type":"legacy_collaboration","weight":0.4\}\
+    ],\
+    "undercurrents": [\
+      \{"name":"rate_cycle","direction":"neutral","rationale":"biotech beta improves with lower real yields"\},\
+      \{"name":"neuro_approval_cycle","direction":"bullish","rationale":"recent AD approvals improve sentiment"\},\
+      \{"name":"capital_markets_access","direction":"neutral","rationale":"cash runway cited into 2027; follow-on risk persists"\}\
+    ]\
+  \},\
+  "signals": \{\
+    "metrics": [\
+      \{"name":"cash_runway_months","unit":"months","current":24,"thresholds":\{"bear":"<18","bull":">=30"\}\},\
+      \{"name":"trial_status_INFRONT3","unit":"state","current":"pivotal_readout_Q4_2025"\},\
+      \{"name":"quarterly_RnD_spend","unit":"$M","current":27.6\}\
+    ],\
+    "events": [\
+      \{"date":"2025-08-07","type":"earnings_update","impact":"+","source":"turn0search0"\},\
+      \{"date":"2025-08-07","type":"cash_runway_disclosed","impact":"+","source":"turn0search5"\},\
+      \{"date":"2025-09-22","type":"trial_baseline_presentation","impact":"=","source":"turn0search1"\}\
+    ]\
+  \},\
+  "news": [\
+    \{"date":"2025-08-08","headline":"Alector Q2 2025 results; INFRONT\uc0\u8209 3 topline mid\u8209 Q4 2025; runway into 2H 2027","sentiment":"+","source":"turn0search0"\},\
+    \{"date":"2025-08-07","headline":"Alector updates guidance; discloses cash runway","sentiment":"+","source":"turn0search5"\}\
+  ],\
+  "risks": [\
+    \{"name":"pivotal_failure","likelihood":"med","severity":"high","leading_indicators":["unexpected safety signal","miss on primary endpoint"]\},\
+    \{"name":"financing_dilution","likelihood":"med","severity":"med","leading_indicators":["ETF outflows","risk-off tape"]\},\
+    \{"name":"competition_AD_neuro","likelihood":"med","severity":"med","leading_indicators":["peer positive data (LLY/BIIB)"]\}\
+  ],\
+  "actions": [\
+    \{"type":"monitor","what":"INFRONT3_topline","rule":"date_between('2025-10-15','2025-12-31')","notify":"slack:#alec"\},\
+    \{"type":"alert","what":"cash_runway_months<18","rule":"quarterly_check","notify":"slack:#risk"\},\
+    \{"type":"monitor","what":"analyst_rating_changes","rule":"daily_news_scan","notify":"email:alerts@desk"\}\
+  ],\
+  "valuation": \{\
+    "method":"event_pathway",\
+    "inputs":\{"scenarios":["approve","delay","fail"]\},\
+    "range":\{"bear":1.0,"base":2.5,"bull":5.0\}\
+  \},\
+  "sources": [\
+    \{"name":"Alector Q2 2025 PR","url":"turn0search0"\},\
+    \{"name":"StockTItan PR mirror (cash runway)","url":"turn0search5"\},\
+    \{"name":"ClinicalTrials.gov NCT04374136","url":"turn0search6"\},\
+    \{"name":"AL001 (latozinemab) program page","url":"turn0search13"\},\
+    \{"name":"Nasdaq summary on Q2 context","url":"turn0search12"\}\
+  ],\
+  "custom": \{\}\
+\}}

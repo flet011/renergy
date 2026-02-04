@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">import React, { useMemo, useRef, useState, useEffect } from "react";</p>
+<p class="p1">import { Card, CardContent } from "@/components/ui/card";</p>
+<p class="p1">import { Button } from "@/components/ui/button";</p>
+<p class="p1">import { Input } from "@/components/ui/input";</p>
+<p class="p1">import { Switch } from "@/components/ui/switch";</p>
+<p class="p1">import { Badge } from "@/components/ui/badge";</p>
+<p class="p1">import { X } from "lucide-react";</p>
+<p class="p2"><br></p>
+<p class="p1">// === Data Model ===</p>
+<p class="p1">// Axioms (10), Schools (7), Dark Triad (3)</p>
+<p class="p2"><br></p>
+<p class="p1">const AXIOMS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A1", label: "Change is the only constant" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A2", label: "Different Angles" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A3", label: "nCr (Combinations)" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A4", label: "n! (Permutations)" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A5", label: "Untruth = Lying" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A6", label: "ΔABC (Change in triangle)" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A7", label: "47, 94, 103, 107, 120, 193" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A8", label: "Future Thinking" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A9", label: "Dietrich (the Self)" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "A10", label: "Get started now" },</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const SCHOOLS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S1", label: "Psychoanalytic" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S2", label: "Behaviorist" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S3", label: "Humanistic" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S4", label: "Cognitive" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S5", label: "Biological" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S6", label: "Evolutionary" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "S7", label: "Sociocultural" },</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const SHADOWS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "D1", label: "Machiavellianism" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "D2", label: "Narcissism" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ id: "D3", label: "Psychopathy" },</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">// Interpretations (light side per school, shadow per dark triad)</p>
+<p class="p1">// Keep concise; expandable in side panel</p>
+<p class="p1">const LIGHT_INTERP: Record&lt;string, Record&lt;string, string&gt;&gt; = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A1: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Unconscious in flux; desire/defense cycles.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Environments shift; conditioning adapts.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Growth is ongoing; self-actualization.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Schemas update via prediction error.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Neuroplasticity; cellular turnover.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Adaptation to variable environments.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Cultures evolve; norms reframe.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A2: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Symbols offer multiple readings.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Stimulus-response diversity.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Empathy via perspective-taking.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Reframing unlocks solutions.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Perception varies with input.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Strategy diversity aids fitness.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Plural truths across contexts.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A3: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Desire/defense combinations.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Combinatorial stimuli shape habit.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Unique life-choice mixes.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Working memory recombination.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Genetic recombination.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Trait mixes across landscapes.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Cultural mashups/memes.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A4: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Endless staging permutations.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Habit permutations over time.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Infinite self-expression paths.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Factorial problem spaces.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Protein folding pathways.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Trait permutations → selection.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Institutions permute roles.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A5: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Denial = lie to self.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Deception reinforced/punished.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Authenticity as growth.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Dissonance when truth misaligned.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Stress signatures of deceit.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Trust stabilizes groups.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Contracts/norms need truth.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A6: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Relational triangles shift.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "A→B→C; intervene at A/C.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Self–Other–World evolves.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Triadic schemas update.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Systems co-adapt in triads.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Predator–Prey–Env coevolve.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "State–Market–Society dynamics.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A7: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Numbers as symbols/obsessions.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Conditioned numeracy rituals.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Meaning-making via patterns.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Pattern detection bias.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Parietal numeracy circuits.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Patterning aids survival.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Sacred math across cultures.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A8: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Future fantasy/desire.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Anticipated reinforcement.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Toward self-actualization.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Prefrontal simulation.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Dopamine for prediction.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Niche construction/plans.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Civilization time horizons.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A9: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Ego mediates id/superego.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Self as learned patterns.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Authenticity/choice locus.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Narrative self-schema.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Integration across networks.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Vehicle for genes/memes.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Role within narratives.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A10: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S1: "Action releases tension.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S2: "Reinforcement requires action.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S3: "Choice initiates growth.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S4: "Action updates beliefs.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S5: "Physiology activates.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S6: "Act → survive/learn.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>S7: "Collective progress needs doers.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">const SHADOW_INTERP: Record&lt;string, Record&lt;string, string&gt;&gt; = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A1: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Exploit flux for leverage.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Change framed as self-destiny.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Chaos as playground.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A2: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Angles as manipulation.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "My angle eclipses others.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Angles as target vectors.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A3: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Combine alliances to control.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Select combos that glorify self.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Permute setups for thrill.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A4: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Endless tactics/permutations.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Any permutation centers me.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Rules bent for dominance.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A5: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Lying as craft/tool.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Self-deception as truth.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Truth irrelevant; outcome only.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A6: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Divide-and-conquer triangles.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Triangulate for admiration.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Gaslight to unmoor others.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A7: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Exploit your pattern-seeking.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Make the sequence about me.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Break patterns to assert power.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A8: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Long-term scheming.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Future of personal glory.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Future discarded; thrill now.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A9: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Strategist manipulating board.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Atlas = me at center.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Free radical, empathy off.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>A10: {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D1: "Act now for advantage.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D2: "Act now for recognition.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>D3: "Act now for thrill.",</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">// === Utility ===</p>
+<p class="p1">function polarToCartesian(cx: number, cy: number, r: number, angleDeg: number) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const angleRad = (angleDeg - 90) * (Math.PI / 180);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>x: cx + r * Math.cos(angleRad),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>y: cy + r * Math.sin(angleRad),</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// === Main Component ===</p>
+<p class="p1">export default function PsychologicalAtlas() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const svgRef = useRef&lt;SVGSVGElement | null&gt;(null);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [dimensions, setDimensions] = useState({ width: 1200, height: 720 });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [selectedId, setSelectedId] = useState&lt;string | null&gt;(null);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [query, setQuery] = useState("");</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [showSchools, setShowSchools] = useState(true);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [showShadow, setShowShadow] = useState(true);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const [showAllEdges, setShowAllEdges] = useState(false);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Resize observer for responsive SVG</p>
+<p class="p1"><span class="Apple-converted-space">  </span>useEffect(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = svgRef.current?.parentElement;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!el) return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const ro = new ResizeObserver(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rect = el.getBoundingClientRect();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>setDimensions({ width: Math.max(700, rect.width), height: Math.max(500, rect.height) });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ro.observe(el);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return () =&gt; ro.disconnect();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, []);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const { nodes, edges } = useMemo(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const W = dimensions.width;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const H = dimensions.height;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const cx = W / 2;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const cy = H / 2;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const radiusAxioms = Math.min(W, H) * 0.28;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const radiusSchools = Math.min(W, H) * 0.42;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const radiusShadow = Math.min(W, H) * 0.14;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const axiomNodes = AXIOMS.map((a, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const angle = (360 / AXIOMS.length) * i;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const p = polarToCartesian(cx, cy, radiusAxioms, angle);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return { id: a.id, label: a.label, type: "axiom", x: p.x, y: p.y };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const schoolNodes = SCHOOLS.map((s, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const angle = (360 / SCHOOLS.length) * i;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const p = polarToCartesian(cx, cy, radiusSchools, angle);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return { id: s.id, label: s.label, type: "school", x: p.x, y: p.y };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const shadowNodes = SHADOWS.map((d, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const angle = (360 / SHADOWS.length) * i;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const p = polarToCartesian(cx, cy, radiusShadow, angle);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return { id: d.id, label: d.label, type: "shadow", x: p.x, y: p.y };</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const nodes = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>...axiomNodes,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>...(showSchools ? schoolNodes : []),</p>
+<p class="p1"><span class="Apple-converted-space">      </span>...(showShadow ? shadowNodes : []),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const edges: { source: string; target: string; type: "light" | "shadow" }[] = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (showSchools) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (const a of AXIOMS) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (const s of SCHOOLS) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>edges.push({ source: a.id, target: s.id, type: "light" });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (showShadow) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>for (const a of AXIOMS) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (const d of SHADOWS) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>edges.push({ source: a.id, target: d.id, type: "shadow" });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>return { nodes, edges };</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, [dimensions, showSchools, showShadow]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const filteredNodes = useMemo(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!query.trim()) return nodes;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const q = query.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return nodes.filter((n) =&gt; n.label.toLowerCase().includes(q));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, [nodes, query]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const filteredNodeIds = new Set(filteredNodes.map((n) =&gt; n.id));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const visibleEdges = useMemo(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!showAllEdges &amp;&amp; selectedId) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return edges.filter((e) =&gt; e.source === selectedId || e.target === selectedId);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!showAllEdges &amp;&amp; !selectedId) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return [];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Show all edges but still respect node filtering</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return edges.filter((e) =&gt; filteredNodeIds.has(e.source) &amp;&amp; filteredNodeIds.has(e.target));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, [edges, selectedId, showAllEdges, filteredNodeIds]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const selectedNode = useMemo(() =&gt; nodes.find((n) =&gt; n.id === selectedId) || null, [nodes, selectedId]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const panelContent = useMemo(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!selectedNode) return null;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (selectedNode.type === "axiom") {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const light = LIGHT_INTERP[selectedNode.id] || {};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const shadow = SHADOW_INTERP[selectedNode.id] || {};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 className="text-lg font-semibold"&gt;Axiom&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p className="text-sm opacity-80"&gt;{selectedNode.label}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4 className="font-medium mb-2"&gt;Light-side Interpretations (7 Schools)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-1 gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{SCHOOLS.map((s) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div key={s.id} className="text-sm"&gt;&lt;span className="font-semibold"&gt;{s.label}:&lt;/span&gt; {light[s.id] || "—"}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4 className="font-medium mb-2"&gt;Dark Triad Distortions&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-1 gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{SHADOWS.map((d) =&gt; (</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div key={d.id} className="text-sm"&gt;&lt;span className="font-semibold"&gt;{d.label}:&lt;/span&gt; {shadow[d.id] || "—"}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>))}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (selectedNode.type === "school") {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const descriptions: Record&lt;string, string&gt; = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S1: "Depth psychology: unconscious drives, conflict, meaning.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S2: "Learning via conditioning; environment → behavior.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S3: "Human potential, agency, authenticity, growth.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S4: "Mind as information processor; schemas, biases.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S5: "Biopsych: brain, hormones, genetics, physiology.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S6: "Adaptation across time; fitness of strategies.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>S7: "Contextual mind: norms, roles, institutions, culture.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 className="text-lg font-semibold"&gt;School&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-sm opacity-80"&gt;{selectedNode.label}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-sm"&gt;{descriptions[selectedNode.id] || ""}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (selectedNode.type === "shadow") {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const desc: Record&lt;string, string&gt; = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>D1: "Machiavellianism: strategic manipulation, ends-over-means.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>D2: "Narcissism: grandiosity, entitlement, fragile self-esteem.",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>D3: "Psychopathy: callousness, impulsivity, thrill-seeking.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div className="space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h3 className="text-lg font-semibold"&gt;Dark Triad&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-sm opacity-80"&gt;{selectedNode.label}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p className="text-sm"&gt;{desc[selectedNode.id] || ""}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return null;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, [selectedNode]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div className="w-full h-full grid grid-cols-1 xl:grid-cols-12 gap-4 p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Controls */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="xl:col-span-3 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;Card className="shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;CardContent className="p-4 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="space-y-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="text-xl font-semibold"&gt;Psychological Atlas&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="text-sm opacity-70"&gt;10 Axioms × 7 Schools × Dark Triad&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label className="text-xs uppercase tracking-wide opacity-70"&gt;Search&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;Input value={query} onChange={(e) =&gt; setQuery(e.target.value)} placeholder="Find a node…" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="grid grid-cols-2 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="text-sm"&gt;Show Schools&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Switch checked={showSchools} onCheckedChange={setShowSchools} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="text-sm"&gt;Show Dark Triad&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Switch checked={showShadow} onCheckedChange={setShowShadow} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="flex items-center justify-between col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span className="text-sm"&gt;Show All Edges&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;Switch checked={showAllEdges} onCheckedChange={setShowAllEdges} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div className="flex gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;Button variant="secondary" onClick={() =&gt; { setSelectedId(null); setQuery(""); }}&gt;Reset&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;Button onClick={() =&gt; setShowAllEdges((v) =&gt; !v)}&gt;{showAllEdges ? "Hide Edges" : "Show Edges"}&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>{selectedNode &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="pt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="flex items-center justify-between mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;div className="text-sm font-medium"&gt;Details&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;Button size="icon" variant="ghost" onClick={() =&gt; setSelectedId(null)}&gt;&lt;X className="h-4 w-4" /&gt;&lt;/Button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div className="max-h-[320px] overflow-auto pr-1"&gt;{panelContent}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>)}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>{!selectedNode &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div className="text-xs opacity-70"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Tip: Click any node to reveal its light-side interpretations (by school) and dark-triad distortions. Toggle edges to view the full network, or keep them hidden and click to focus.</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>)}</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>{/* Graph */}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div className="xl:col-span-9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;Card className="w-full h-[70vh] xl:h-[85vh] shadow-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;CardContent className="p-0 w-full h-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg ref={svgRef} width="100%" height="100%" className="[&amp;&gt;*]:transition-all"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* Defs */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;marker id="arrow-light" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto" markerUnits="strokeWidth"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;path d="M0,0 L0,6 L9,3 z" fill="currentColor" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/marker&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;marker id="arrow-shadow" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto" markerUnits="strokeWidth"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;path d="M0,0 L0,6 L9,3 z" fill="currentColor" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/marker&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/defs&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* Edges */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{visibleEdges.map((e, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const s = nodes.find((n) =&gt; n.id === e.source)!;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const t = nodes.find((n) =&gt; n.id === e.target)!;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const color = e.type === "light" ? "#94a3b8" : "#ef4444"; // slate vs red</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const opacity = showAllEdges ? 0.15 : 0.4;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;line</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>key={idx}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x1={s.x}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y1={s.y}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x2={t.x}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y2={t.y}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>stroke={color}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>strokeWidth={1}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>opacity={opacity}</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>})}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* Nodes */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{nodes.map((n) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isFilteredOut = query &amp;&amp; !n.label.toLowerCase().includes(query.toLowerCase());</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const isSelected = selectedId === n.id;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const r = n.type === "axiom" ? 18 : n.type === "school" ? 14 : 12;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const fill = n.type === "axiom" ? "#0ea5e9" : n.type === "school" ? "#10b981" : "#ef4444"; // cyan, green, red</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const stroke = isSelected ? "#111827" : "#334155";</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const opacity = isFilteredOut ? 0.25 : 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;g key={n.id} transform={`translate(${n.x},${n.y})`} className="cursor-pointer" onClick={() =&gt; setSelectedId(n.id)}&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;circle r={r} fill={fill} stroke={stroke} strokeWidth={isSelected ? 3 : 1.5} opacity={opacity} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;text</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>x={0}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>y={r + 14}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>textAnchor="middle"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>className="fill-slate-700 text-[10px] select-none"</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>{n.label}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{n.type !== "axiom" &amp;&amp; (</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;text x={0} y={r + 26} textAnchor="middle" className="fill-slate-400 text-[9px] select-none"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>{n.type}</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>)}</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>);</p>
+<p class="p1"><span class="Apple-converted-space">              </span>})}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* Concentric guides */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx={dimensions.width/2} cy={dimensions.height/2} r={Math.min(dimensions.width, dimensions.height)*0.14} fill="none" stroke="#e2e8f0" strokeDasharray="4 6" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx={dimensions.width/2} cy={dimensions.height/2} r={Math.min(dimensions.width, dimensions.height)*0.28} fill="none" stroke="#e2e8f0" strokeDasharray="4 6" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;circle cx={dimensions.width/2} cy={dimensions.height/2} r={Math.min(dimensions.width, dimensions.height)*0.42} fill="none" stroke="#e2e8f0" strokeDasharray="4 6" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>{/* Legend */}</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;g transform="translate(20,30)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;rect x={-10} y={-18} width={220} height={70} rx={10} fill="white" stroke="#e2e8f0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;circle cx={0} cy={0} r={6} fill="#0ea5e9" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;text x={14} y={4} className="fill-slate-600 text-[11px]"&gt;Axiom&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;g transform="translate(90,0)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;circle cx={0} cy={0} r={6} fill="#10b981" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;text x={14} y={4} className="fill-slate-600 text-[11px]"&gt;School&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;g transform="translate(170,0)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;circle cx={0} cy={0} r={6} fill="#ef4444" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;text x={14} y={4} className="fill-slate-600 text-[11px]"&gt;Dark Triad&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;g transform="translate(0,24)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;line x1={-2} y1={0} x2={18} y2={0} stroke="#94a3b8" strokeWidth={2} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;text x={24} y={4} className="fill-slate-600 text-[11px]"&gt;Light-edge&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;g transform="translate(90,24)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;line x1={-2} y1={0} x2={18} y2={0} stroke="#ef4444" strokeWidth={2} /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>&lt;text x={24} y={4} className="fill-slate-600 text-[11px]"&gt;Shadow-edge&lt;/text&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/g&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/CardContent&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/Card&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+</body>
+</html>
