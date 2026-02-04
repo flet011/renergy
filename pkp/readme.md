@@ -157,7 +157,7 @@ RS5 is where CAM is enforced:
 ---
 
 Title: CAM 2025: A Predictive and Intervention-Based Framework for Modeling Human Behavioral Trajectories
-Author: [REDACTED]
+Author: [Dietrich Zeledon]
 Abstract: Current models of human behavior either explain actions retrospectively (CBT, Rational Choice) or attempt passive environmental nudges (Behavioral Economics). CAM 2025 proposes a novel synthesis: a system that not only predicts choice behavior based on weighted personal history and context, but also introduces an applied variable of calculated influence (S070) to alter decision trajectory in real time. This paper introduces CAM 2025 as a predictive behavioral framework built on emotional memory weighting, moment-contextual influence, and differential behavioral calculus. Initial simulations suggest its viability in modeling and shifting individual choice likelihood. This manuscript outlines CAM019s structure, philosophy, equations, applications, and proposed research validations.
  
 1. Introduction
