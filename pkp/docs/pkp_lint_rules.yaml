@@ -1,0 +1,4 @@
+thresholds:
+  require_thresholds_for_metrics: true
+actions:
+  require_notify: true
