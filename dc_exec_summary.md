@@ -3,7 +3,7 @@
 
 ---
 
-## ðŸŽ¯ THE OPPORTUNITY
+## THE OPPORTUNITY
 
 ### Market Size
 | Metric | Value | Source |
@@ -29,7 +29,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ“Š DATABASE ASSETS COMPILED
+## DATABASE ASSETS COMPILED
 
 ### 17 Complete Databases (OSINT-sourced)
 
@@ -55,7 +55,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ”¥ KEY MARKET INSIGHTS
+## KEY MARKET INSIGHTS
 
 ### Supply Constraints (Critical)
 | Market | Vacancy Rate | Pricing ($/kW/mo) | Power Queue |
@@ -87,7 +87,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ’° REVENUE MODEL
+## REVENUE MODEL
 
 ### Transaction-Based (Primary)
 | Segment | GMV Potential | Take Rate | Revenue |
@@ -112,7 +112,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ—ï¸ PRODUCT ROADMAP
+## PRODUCT ROADMAP
 
 ### Phase 1: Listing Platform (MVP)
 - Facility directory with specs, availability, pricing
@@ -135,7 +135,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸŽ¯ GO-TO-MARKET STRATEGY
+## GO-TO-MARKET STRATEGY
 
 ### Supply Side (Operators)
 **Target**: 25 operators in database
@@ -164,7 +164,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ† COMPETITIVE LANDSCAPE
+## COMPETITIVE LANDSCAPE
 
 ### Existing Players (Weak)
 | Competitor | Model | Weakness |
@@ -183,7 +183,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ“ˆ KEY METRICS TO TRACK
+## KEY METRICS TO TRACK
 
 ### Supply Metrics
 - Facilities listed
@@ -210,7 +210,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## âš ï¸ RISKS & MITIGATIONS
+## RISKS & MITIGATIONS
 
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
@@ -222,7 +222,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ’¡ IMMEDIATE NEXT STEPS
+## IMMEDIATE NEXT STEPS
 
 ### Week 1-2
 - [ ] Validate database with 5 operator calls
@@ -270,7 +270,7 @@ dc_marketplace_16_investor_intelligence.csv - 13 investors
 
 ---
 
-## ðŸ“ž KEY CONTACTS TO PURSUE
+## KEY CONTACTS TO PURSUE
 
 ### Operators (for listings)
 - Digital Realty: Andrew Power (CEO)
