@@ -246,7 +246,7 @@ A **real-time marketplace** connecting:
 
 ---
 
-## ðŸ“ DATABASE FILES
+## DATABASE FILES
 
 ```
 dc_marketplace_00_master_stats.json      - Aggregated metrics
