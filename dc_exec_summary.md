@@ -1,5 +1,5 @@
 # DC Marketplace: Executive Summary
-## "Zillow for Data Centers" â€” AI Infrastructure Marketplace
+## "Zillow for Data Centers"  AI Infrastructure Marketplace
 
 ---
 
