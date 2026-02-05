@@ -1,1 +1,86 @@
-
+facility_id,operator_id,facility_code,city,state_province,metro_market,latitude,longitude,total_sqft,total_capacity_mw,available_capacity_mw,facility_type,liquid_cooling,dgx_ready,pue_rating,renewable_energy_pct,network_bandwidth_gbps,cloud_onramps,year_opened,description,utilization_pct,rack_count_est
+eqix_dc2_ashburn,eqix,DC2,Ashburn,VA,Northern Virginia,39.0437,-77.4875,520000,48,3.6,Retail Colocation,True,True,1.42,98,400,"aws,azure,google,oracle",1990,Equinix premier interconnection hub,92.5,1040
+eqix_dc10_ashburn,eqix,DC10,Ashburn,VA,Northern Virginia,39.0401,-77.4912,480000,42,2.1,Retail Colocation,True,True,1.38,98,400,"aws,azure,google",2014,High-density AI-ready,95.0,960
+eqix_dc11_ashburn,eqix,DC11,Ashburn,VA,Northern Virginia,39.0387,-77.4945,650000,65,4.8,Hyperscale,True,True,1.35,98,800,"aws,azure,google,meta",2017,Flagship campus,92.6,1300
+eqix_dc15_ashburn,eqix,DC15,Ashburn,VA,Northern Virginia,39.0455,-77.489,720000,72,5.2,Hyperscale,True,True,1.33,98,1000,"aws,azure,google,meta,oracle",2022,Latest generation,92.8,1440
+dlr_iad1_ashburn,dlr,IAD1,Ashburn,VA,Northern Virginia,39.0412,-77.4834,850000,85,6.4,Hyperscale,True,False,1.28,75,400,aws,2012,AWS anchor tenant,92.5,1700
+dlr_iad12_ashburn,dlr,IAD12,Ashburn,VA,Northern Virginia,39.0445,-77.4867,920000,98,7.2,Hyperscale,True,True,1.26,78,800,"aws,meta",2019,Meta anchor,92.7,1840
+dlr_iad30_ashburn,dlr,IAD30,Ashburn,VA,Northern Virginia,39.0478,-77.4901,1200000,120,8.5,Hyperscale,True,True,1.24,82,1200,"aws,google,meta",2023,AI-optimized campus,92.9,2400
+qts_iad1_ashburn,qts,IAD1,Ashburn,VA,Northern Virginia,39.039,-77.4956,650000,65,4.5,Hyperscale,True,True,1.29,72,600,"aws,azure",2018,Federal certified,93.1,1300
+qts_iad2_ashburn,qts,IAD2,Ashburn,VA,Northern Virginia,39.041,-77.4978,780000,78,5.8,Hyperscale,True,True,1.27,74,800,"google,oracle",2021,Government cloud,92.6,1560
+cyrus_nva1_sterling,cyrus,NVA1,Sterling,VA,Northern Virginia,39.005,-77.42,420000,40,3.2,Retail Colocation,False,False,1.39,68,220,aws,2015,Enterprise focus,92.0,840
+cyrus_nva9_leesburg,cyrus,NVA9,Leesburg,VA,Northern Virginia,39.11,-77.55,700000,70,5.5,Hyperscale,True,True,1.33,72,480,"aws,azure",2020,Campus expansion,92.1,1400
+coresite_dc1_reston,coresite,DC1,Reston,VA,Northern Virginia,38.9586,-77.357,320000,32,2.4,Retail Colocation,True,True,1.31,90,280,"aws,azure,google",2012,Government certified,92.5,640
+coresite_dc2_reston,coresite,DC2,Reston,VA,Northern Virginia,38.9601,-77.3582,377000,38,2.8,Hybrid,True,True,1.29,90,350,"aws,google",2018,Cloud gateway,92.6,754
+vantage_nva1_ashburn,vantage,NVA1,Ashburn,VA,Northern Virginia,39.048,-77.482,580000,58,4.2,Hyperscale,True,True,1.26,85,500,"azure,oracle",2019,Build-to-suit,92.8,1160
+stack_nva_ashburn,stack,NVA-Campus,Ashburn,VA,Northern Virginia,39.05,-77.478,2800000,280,22.0,Hyperscale,True,True,1.24,92,1200,"aws,google,meta",2021,Massive hyperscale campus,92.1,5600
+dlr_dfw1_richardson,dlr,DFW1,Richardson,TX,Dallas,32.9483,-96.7299,720000,68,5.2,Hyperscale,True,True,1.29,72,500,"oracle,aws",2014,Oracle anchor,92.4,1440
+dlr_dfw2_garland,dlr,DFW2,Garland,TX,Dallas,32.9126,-96.6389,680000,64,4.8,Wholesale,True,False,1.31,72,350,azure,2016,Enterprise tenants,92.5,1360
+dlr_dfw14_garland,dlr,DFW14,Garland,TX,Dallas,32.915,-96.642,890000,92,7.2,Hyperscale,True,True,1.27,75,700,"meta,google",2022,AI workloads,92.2,1780
+qts_dfw1_irving,qts,DFW1,Irving,TX,Dallas,32.814,-96.9489,580000,58,4.5,Hyperscale,True,True,1.28,74,480,"aws,oracle",2017,Mega campus,92.2,1160
+cyrus_dfw1_carrollton,cyrus,DFW1,Carrollton,TX,Dallas,32.9537,-96.8903,450000,45,3.5,Hybrid,True,False,1.36,65,280,azure,2015,Enterprise focus,92.2,900
+stack_dfw_garland,stack,DFW-Campus,Garland,TX,Dallas,32.918,-96.65,1920000,192,15.0,Hyperscale,True,True,1.26,88,900,"oracle,aws",2020,Hyperscale campus,92.2,3840
+aligned_dfw1_plano,aligned,DFW1,Plano,TX,Dallas,33.0198,-96.6989,420000,42,3.2,Adaptive,True,True,1.22,82,320,"aws,azure",2019,Delta3 cooling,92.4,840
+databank_dfw1_richardson,databank,DFW1,Richardson,TX,Dallas,32.945,-96.732,180000,18,1.4,Retail,False,False,1.42,58,150,aws,2016,Edge colocation,92.2,360
+eqix_sv1_sanjose,eqix,SV1,San Jose,CA,Silicon Valley,37.3382,-121.8863,380000,32,1.8,Retail Colocation,True,True,1.48,95,200,"aws,google",1999,Original SV hub,94.4,760
+eqix_sv5_sanjose,eqix,SV5,San Jose,CA,Silicon Valley,37.3387,-121.8905,420000,36,2.2,Retail Colocation,True,True,1.44,95,220,"aws,google,oracle",2008,Expanded campus,93.9,840
+eqix_sv10_sanjose,eqix,SV10,San Jose,CA,Silicon Valley,37.3312,-121.8894,540000,54,3.5,Hybrid,True,True,1.39,95,350,"aws,google,azure,alibaba",2018,AI-ready,93.5,1080
+eqix_sv11_sanjose,eqix,SV11,Santa Clara,CA,Silicon Valley,37.3541,-121.9552,480000,48,3.2,Hybrid,True,True,1.37,95,320,"google,meta",2021,High-density,93.3,960
+dlr_sfo1_santaclara,dlr,SFO1,Santa Clara,CA,Silicon Valley,37.3541,-121.9552,560000,52,3.8,Retail Colocation,True,False,1.36,82,280,"aws,google",2010,200+ networks,92.7,1120
+dlr_sfo12_santaclara,dlr,SFO12,Santa Clara,CA,Silicon Valley,37.3587,-121.9604,480000,46,2.8,Hybrid,True,True,1.33,85,320,"aws,google,oracle",2019,Cloud gateway,93.9,960
+coresite_sv1_santaclara,coresite,SV1,Santa Clara,CA,Silicon Valley,37.3541,-121.9552,180000,18,1.2,Retail Colocation,True,True,1.35,88,180,"aws,azure",2010,Network-dense,93.3,360
+coresite_sv9_santaclara,coresite,SV9,Santa Clara,CA,Silicon Valley,37.3587,-121.9604,228000,22,1.5,Retail Colocation,True,True,1.32,88,250,"aws,azure,google",2020,DGX-Ready AI,93.2,456
+dlr_phx1_phoenix,dlr,PHX1,Phoenix,AZ,Phoenix,33.4484,-112.074,680000,64,14.5,Hyperscale,True,True,1.31,68,480,"aws,azure",2018,Multiple hyperscalers,77.3,1360
+dlr_phx2_mesa,dlr,PHX2,Mesa,AZ,Phoenix,33.4152,-111.8315,920000,92,25.0,Hyperscale,True,True,1.28,72,650,"google,meta",2023,New campus,72.8,1840
+cyrus_phx1_phoenix,cyrus,PHX1,Phoenix,AZ,Phoenix,33.4484,-112.074,520000,50,12.0,Hybrid,True,True,1.36,62,280,azure,2017,Mixed tenant,76.0,1040
+stack_phx_phoenix,stack,PHX-Campus,Phoenix,AZ,Phoenix,33.455,-112.08,1680000,168,45.0,Hyperscale,True,True,1.28,85,800,"azure,aws",2021,AI-ready campus,73.2,3360
+aligned_phx1_mesa,aligned,PHX1,Mesa,AZ,Phoenix,33.42,-111.84,380000,38,9.5,Adaptive,True,True,1.2,85,320,"aws,google",2020,Industry-lowest PUE,75.0,760
+vantage_phx1_goodyear,vantage,PHX1,Goodyear,AZ,Phoenix,33.4353,-112.3585,650000,65,18.0,Hyperscale,True,True,1.27,88,500,"meta,oracle",2022,Fast deployment,72.3,1300
+eqix_ch1_chicago,eqix,CH1,Chicago,IL,Chicago,41.8781,-87.6298,340000,28,1.8,Retail Colocation,True,False,1.49,88,150,"aws,azure",2002,Financial hub,93.6,680
+eqix_ch2_chicago,eqix,CH2,Chicago,IL,Chicago,41.8804,-87.6311,420000,38,2.5,Hybrid,True,True,1.43,88,280,"aws,google,azure",2012,Mixed workloads,93.4,840
+eqix_ch4_chicago,eqix,CH4,Chicago,IL,Chicago,41.8825,-87.6335,520000,52,3.2,Hybrid,True,True,1.38,90,350,"aws,google,meta",2020,High-density,93.8,1040
+dlr_chi1_franklinpark,dlr,CHI1,Franklin Park,IL,Chicago,41.9389,-87.8706,720000,72,5.5,Hyperscale,True,True,1.27,78,550,"aws,azure,google",2016,Multiple hyperscalers,92.4,1440
+dlr_chi2_franklinpark,dlr,CHI2,Franklin Park,IL,Chicago,41.9401,-87.8719,840000,84,6.2,Hyperscale,True,True,1.25,80,720,"azure,google",2021,AI workloads,92.6,1680
+qts_chi1_aurora,qts,CHI1,Aurora,IL,Chicago,41.7606,-88.3201,580000,58,4.2,Hyperscale,True,True,1.29,74,480,"oracle,aws",2019,Enterprise campus,92.8,1160
+cyrus_chi1_aurora,cyrus,CHI1,Aurora,IL,Chicago,41.7606,-88.3201,580000,56,4.0,Wholesale,True,False,1.38,72,320,azure,2017,Enterprise campus,92.9,1160
+stack_chi_chicago,stack,CHI-Campus,Chicago,IL,Chicago,41.89,-87.64,760000,76,5.8,Hyperscale,True,True,1.27,86,600,"google,azure",2022,Midwest anchor,92.4,1520
+eqix_ny2_secaucus,eqix,NY2,Secaucus,NJ,New York,40.7895,-74.0565,390000,34,1.8,Retail Colocation,True,True,1.52,92,180,"aws,azure",2000,Financial services,94.7,780
+eqix_ny4_secaucus,eqix,NY4,Secaucus,NJ,New York,40.7901,-74.0571,610000,58,3.2,Hybrid,True,True,1.41,92,450,"aws,google,meta",2012,Hyperscale anchor,94.5,1220
+eqix_ny5_secaucus,eqix,NY5,Secaucus,NJ,New York,40.7912,-74.0582,720000,72,4.2,Hyperscale,True,True,1.37,92,600,"aws,azure,google,oracle",2018,Flagship East Coast,94.2,1440
+eqix_ny9_manhattan,eqix,NY9,New York,NY,New York,40.7128,-74.006,180000,18,0.8,Retail Colocation,False,False,1.58,90,120,financial,1998,111 8th Ave anchor,95.6,360
+dlr_ewj1_weehawken,dlr,EWJ1,Weehawken,NJ,New York,40.7693,-74.0203,450000,45,2.5,Wholesale,True,False,1.38,78,280,"azure,aws",2015,Hudson waterfront,94.4,900
+coresite_ny1_manhattan,coresite,NY1,New York,NY,New York,40.7128,-74.006,220000,20,1.2,Retail Colocation,True,False,1.38,85,200,aws,2010,Financial hub,94.0,440
+coresite_ny2_secaucus,coresite,NY2,Secaucus,NJ,New York,40.7895,-74.0565,380000,36,2.2,Hybrid,True,True,1.34,85,320,"aws,azure,google",2016,Cloud gateway,93.9,760
+dlr_pdx10_hillsboro,dlr,PDX10,Hillsboro,OR,Portland,45.529,-122.9904,920000,92,28.0,Hyperscale,True,True,1.22,95,800,aws,2020,AWS primary,69.6,1840
+dlr_pdx12_hillsboro,dlr,PDX12,Hillsboro,OR,Portland,45.5312,-122.9932,560000,56,18.0,Hyperscale,True,True,1.24,95,600,google,2022,Google anchor,67.9,1120
+vantage_pdx1_hillsboro,vantage,PDX1,Hillsboro,OR,Portland,45.535,-123.0,480000,48,15.0,Hyperscale,True,True,1.25,92,420,"meta,aws",2021,Cheap hydro power,68.8,960
+stack_pdx_hillsboro,stack,PDX-Campus,Hillsboro,OR,Portland,45.54,-123.01,720000,72,22.0,Hyperscale,True,True,1.23,95,580,"azure,google",2023,New campus,69.4,1440
+dlr_atl1_atlanta,dlr,ATL1,Atlanta,GA,Atlanta,33.749,-84.388,520000,52,8.5,Hyperscale,True,True,1.32,75,380,"aws,azure",2016,Southeast anchor,83.7,1040
+dlr_atl2_atlanta,dlr,ATL2,Atlanta,GA,Atlanta,33.752,-84.391,680000,68,12.0,Hyperscale,True,True,1.29,78,520,"google,meta",2021,AI workloads,82.4,1360
+qts_atl1_atlanta,qts,ATL1,Atlanta,GA,Atlanta,33.756,-84.395,450000,45,7.2,Hybrid,True,True,1.31,72,350,"oracle,aws",2018,Enterprise campus,84.0,900
+stack_atl_atlanta,stack,ATL-Campus,Atlanta,GA,Atlanta,33.76,-84.4,920000,92,18.0,Hyperscale,True,True,1.29,82,550,"aws,azure",2022,Southeast hub,80.4,1840
+databank_atl1_atlanta,databank,ATL1,Atlanta,GA,Atlanta,33.748,-84.387,150000,15,2.5,Retail,True,False,1.4,62,120,aws,2017,Edge colocation,83.3,300
+eqix_ld5_slough,eqix,LD5,Slough,England,London,51.514,-0.595,480000,42,3.2,Hybrid,True,True,1.41,100,320,"aws,azure,google",2016,UK flagship,92.4,960
+eqix_ld8_docklands,eqix,LD8,Docklands,England,London,51.505,-0.02,380000,34,2.5,Retail Colocation,True,True,1.47,100,200,"aws,azure",2018,Financial district,92.6,760
+dlr_lon1_slough,dlr,LON1,Slough,England,London,51.516,-0.598,650000,65,5.2,Hyperscale,True,True,1.35,100,480,"aws,google",2019,Hyperscale campus,92.0,1300
+cyrus_lon1_slough,cyrus,LON1,Slough,England,London,51.518,-0.601,430000,43,3.5,Hybrid,True,True,1.37,100,280,"aws,azure",2018,Financial services,91.9,860
+globalswitch_lon1_london,globalswitch,LON1,London,England,London,51.52,-0.01,520000,52,4.2,Wholesale,True,True,1.38,95,350,"azure,alibaba",2015,Carrier-neutral,91.9,1040
+eqix_fr5_frankfurt,eqix,FR5,Frankfurt,Germany,Frankfurt,50.1109,8.6821,420000,38,2.8,Hybrid,True,True,1.39,100,350,"aws,google,azure,alibaba",2017,DE-CIX hub,92.6,840
+eqix_fr6_frankfurt,eqix,FR6,Frankfurt,Germany,Frankfurt,50.115,8.685,380000,34,2.2,Retail Colocation,True,True,1.42,100,280,"aws,azure",2020,High-density,93.5,760
+dlr_fra1_frankfurt,dlr,FRA1,Frankfurt,Germany,Frankfurt,50.1109,8.6821,480000,46,3.5,Hybrid,True,True,1.32,100,350,"aws,azure",2015,Banking + cloud,92.4,960
+dlr_fra33_hattersheim,dlr,FRA33,Hattersheim,Germany,Frankfurt,50.0693,8.4897,640000,62,5.0,Hyperscale,True,True,1.28,100,600,"google,oracle",2021,Hyperscale campus,91.9,1280
+cyrus_fra5_hanau,cyrus,FRA5,Hanau,Germany,Frankfurt,50.1324,8.9161,380000,36,2.8,Retail Colocation,True,False,1.4,100,220,azure,2019,Banking focus,92.2,760
+eqix_am3_amsterdam,eqix,AM3,Amsterdam,Netherlands,Amsterdam,52.3702,4.8952,440000,40,3.0,Hybrid,True,True,1.4,100,340,"aws,azure,google",2014,AMS-IX hub,92.5,880
+eqix_am7_amsterdam,eqix,AM7,Amsterdam,Netherlands,Amsterdam,52.375,4.9,380000,36,2.5,Retail Colocation,True,True,1.38,100,280,"aws,azure",2019,High-density,93.1,760
+dlr_ams1_amsterdam,dlr,AMS1,Amsterdam,Netherlands,Amsterdam,52.3702,4.8952,520000,50,4.0,Wholesale,True,True,1.34,100,300,azure,2016,Enterprise focus,92.0,1040
+cyrus_ams1_amsterdam,cyrus,AMS1,Amsterdam,Netherlands,Amsterdam,52.3702,4.8952,320000,29,2.2,Retail Colocation,True,False,1.42,100,200,aws,2017,European hub,92.4,640
+puredc_ams1_westpoort,puredc,AMS1,Westpoort,Netherlands,Amsterdam,52.41,4.85,780000,78,12.0,Hyperscale,True,True,1.25,100,650,hyperscaler,2025,Europe's largest standalone,84.6,1560
+eqix_sg1_singapore,eqix,SG1,Singapore,Singapore,Singapore,1.3521,103.8198,360000,32,1.2,Retail Colocation,True,True,1.44,95,220,"aws,azure,alibaba",2012,APAC hub,96.2,720
+eqix_sg3_singapore,eqix,SG3,Singapore,Singapore,Singapore,1.355,103.822,520000,50,1.8,Hyperscale,True,True,1.38,95,480,"aws,google,azure,alibaba",2019,Hyperscale expansion,96.4,1040
+dlr_sin1_singapore,dlr,SIN1,Singapore,Singapore,Singapore,1.35,103.815,450000,45,1.5,Wholesale,True,True,1.36,90,350,"aws,google",2017,Financial hub,96.7,900
+ntt_sin1_singapore,ntt,SIN1,Singapore,Singapore,Singapore,1.348,103.813,380000,38,1.2,Hybrid,True,True,1.4,88,280,"azure,alibaba",2018,Tier 1 network,96.8,760
+globalswitch_sin1_singapore,globalswitch,SIN1,Singapore,Singapore,Singapore,1.352,103.82,420000,42,1.4,Wholesale,True,True,1.42,85,320,"alibaba,tencent",2015,APAC anchor,96.7,840
+eqix_ty3_tokyo,eqix,TY3,Tokyo,Japan,Tokyo,35.6762,139.6503,380000,34,2.2,Retail Colocation,True,True,1.45,92,250,"aws,azure,alibaba",2015,Financial services,93.5,760
+eqix_ty11_tokyo,eqix,TY11,Tokyo,Japan,Tokyo,35.68,139.655,420000,42,2.8,Hybrid,True,True,1.4,95,320,"aws,google",2021,High-density,93.3,840
+dlr_tky1_tokyo,dlr,TKY1,Tokyo,Japan,Tokyo,35.675,139.648,520000,52,3.5,Wholesale,True,True,1.38,88,380,"aws,azure",2018,Enterprise campus,93.3,1040
+ntt_tky1_tokyo,ntt,TKY1,Tokyo,Japan,Tokyo,35.672,139.645,650000,65,4.2,Hybrid,True,True,1.35,90,480,all major,2017,Flagship Japan,93.5,1300
