@@ -1,0 +1,209 @@
+market,deployment_size,price_per_kw_month,estimated_monthly_cost,lease_terms,availability,tier
+Northern Virginia,Single Rack,331.2,1656.0,Month-to-month,Limited,Retail
+Northern Virginia,Quarter Cab,294.4,736.0,Month-to-month,Limited,Retail
+Northern Virginia,Half Cab,257.6,1288.0,Month-to-month,Limited,Retail
+Northern Virginia,Full Cabinet,239.2,2392.0,Month-to-month,Limited,Retail
+Northern Virginia,2 Cabinets,220.8,4416.0,Month-to-month,Limited,Retail
+Northern Virginia,5 Cabinets,202.4,10120.0,Month-to-month,Limited,Retail
+Northern Virginia,10 kW,193.2,1932.0,12-36 months,Limited,Retail
+Northern Virginia,25 kW,184.0,4600.0,12-36 months,Limited,Retail
+Northern Virginia,50 kW,174.8,8740.0,12-36 months,Limited,Retail
+Northern Virginia,100 kW,169.28,16928.0,12-36 months,Limited,Retail
+Northern Virginia,250 kW,161.92,40480.0,12-36 months,Limited,Retail
+Northern Virginia,500 kW,156.4,78200.0,12-36 months,Limited,Retail
+Northern Virginia,1 MW,147.2,147200.0,36-120 months,Limited,Wholesale
+Northern Virginia,2 MW,138.0,276000.0,36-120 months,Limited,Wholesale
+Northern Virginia,5 MW,128.8,644000.0,36-120 months,Limited,Wholesale
+Northern Virginia,10+ MW,119.6,1196000.0,36-120 months,Limited,Wholesale
+Dallas,Single Rack,261.0,1305.0,Month-to-month,Moderate,Retail
+Dallas,Quarter Cab,232.0,580.0,Month-to-month,Moderate,Retail
+Dallas,Half Cab,203.0,1015.0,Month-to-month,Moderate,Retail
+Dallas,Full Cabinet,188.5,1885.0,Month-to-month,Moderate,Retail
+Dallas,2 Cabinets,174.0,3480.0,Month-to-month,Moderate,Retail
+Dallas,5 Cabinets,159.5,7975.0,Month-to-month,Moderate,Retail
+Dallas,10 kW,152.25,1522.5,12-36 months,Moderate,Retail
+Dallas,25 kW,145.0,3625.0,12-36 months,Moderate,Retail
+Dallas,50 kW,137.75,6887.5,12-36 months,Moderate,Retail
+Dallas,100 kW,133.4,13340.0,12-36 months,Moderate,Retail
+Dallas,250 kW,127.6,31900.0,12-36 months,Moderate,Retail
+Dallas,500 kW,123.25,61625.0,12-36 months,Moderate,Retail
+Dallas,1 MW,116.0,116000.0,36-120 months,Moderate,Wholesale
+Dallas,2 MW,108.75,217500.0,36-120 months,Moderate,Wholesale
+Dallas,5 MW,101.5,507500.0,36-120 months,Moderate,Wholesale
+Dallas,10+ MW,94.25,942500.0,36-120 months,Moderate,Wholesale
+Phoenix,Single Rack,279.0,1395.0,Month-to-month,Moderate,Retail
+Phoenix,Quarter Cab,248.0,620.0,Month-to-month,Moderate,Retail
+Phoenix,Half Cab,217.0,1085.0,Month-to-month,Moderate,Retail
+Phoenix,Full Cabinet,201.5,2015.0,Month-to-month,Moderate,Retail
+Phoenix,2 Cabinets,186.0,3720.0,Month-to-month,Moderate,Retail
+Phoenix,5 Cabinets,170.5,8525.0,Month-to-month,Moderate,Retail
+Phoenix,10 kW,162.75,1627.5,12-36 months,Moderate,Retail
+Phoenix,25 kW,155.0,3875.0,12-36 months,Moderate,Retail
+Phoenix,50 kW,147.25,7362.5,12-36 months,Moderate,Retail
+Phoenix,100 kW,142.6,14260.0,12-36 months,Moderate,Retail
+Phoenix,250 kW,136.4,34100.0,12-36 months,Moderate,Retail
+Phoenix,500 kW,131.75,65875.0,12-36 months,Moderate,Retail
+Phoenix,1 MW,124.0,124000.0,36-120 months,Moderate,Wholesale
+Phoenix,2 MW,116.25,232500.0,36-120 months,Moderate,Wholesale
+Phoenix,5 MW,108.5,542500.0,36-120 months,Moderate,Wholesale
+Phoenix,10+ MW,100.75,1007500.0,36-120 months,Moderate,Wholesale
+Chicago,Single Rack,297.0,1485.0,Month-to-month,Moderate,Retail
+Chicago,Quarter Cab,264.0,660.0,Month-to-month,Moderate,Retail
+Chicago,Half Cab,231.0,1155.0,Month-to-month,Moderate,Retail
+Chicago,Full Cabinet,214.5,2145.0,Month-to-month,Moderate,Retail
+Chicago,2 Cabinets,198.0,3960.0,Month-to-month,Moderate,Retail
+Chicago,5 Cabinets,181.5,9075.0,Month-to-month,Moderate,Retail
+Chicago,10 kW,173.25,1732.5,12-36 months,Moderate,Retail
+Chicago,25 kW,165.0,4125.0,12-36 months,Moderate,Retail
+Chicago,50 kW,156.75,7837.5,12-36 months,Moderate,Retail
+Chicago,100 kW,151.8,15180.0,12-36 months,Moderate,Retail
+Chicago,250 kW,145.2,36300.0,12-36 months,Moderate,Retail
+Chicago,500 kW,140.25,70125.0,12-36 months,Moderate,Retail
+Chicago,1 MW,132.0,132000.0,36-120 months,Moderate,Wholesale
+Chicago,2 MW,123.75,247500.0,36-120 months,Moderate,Wholesale
+Chicago,5 MW,115.5,577500.0,36-120 months,Moderate,Wholesale
+Chicago,10+ MW,107.25,1072500.0,36-120 months,Moderate,Wholesale
+Silicon Valley,Single Rack,450.0,2250.0,Month-to-month,Moderate,Retail
+Silicon Valley,Quarter Cab,400.0,1000.0,Month-to-month,Moderate,Retail
+Silicon Valley,Half Cab,350.0,1750.0,Month-to-month,Moderate,Retail
+Silicon Valley,Full Cabinet,325.0,3250.0,Month-to-month,Moderate,Retail
+Silicon Valley,2 Cabinets,300.0,6000.0,Month-to-month,Moderate,Retail
+Silicon Valley,5 Cabinets,275.0,13750.0,Month-to-month,Moderate,Retail
+Silicon Valley,10 kW,262.5,2625.0,12-36 months,Moderate,Retail
+Silicon Valley,25 kW,250.0,6250.0,12-36 months,Moderate,Retail
+Silicon Valley,50 kW,237.5,11875.0,12-36 months,Moderate,Retail
+Silicon Valley,100 kW,230.0,23000.0,12-36 months,Moderate,Retail
+Silicon Valley,250 kW,220.0,55000.0,12-36 months,Moderate,Retail
+Silicon Valley,500 kW,212.5,106250.0,12-36 months,Moderate,Retail
+Silicon Valley,1 MW,200.0,200000.0,36-120 months,Moderate,Wholesale
+Silicon Valley,2 MW,187.5,375000.0,36-120 months,Moderate,Wholesale
+Silicon Valley,5 MW,175.0,875000.0,36-120 months,Moderate,Wholesale
+Silicon Valley,10+ MW,162.5,1625000.0,36-120 months,Moderate,Wholesale
+Atlanta,Single Rack,216.0,1080.0,Month-to-month,Moderate,Retail
+Atlanta,Quarter Cab,192.0,480.0,Month-to-month,Moderate,Retail
+Atlanta,Half Cab,168.0,840.0,Month-to-month,Moderate,Retail
+Atlanta,Full Cabinet,156.0,1560.0,Month-to-month,Moderate,Retail
+Atlanta,2 Cabinets,144.0,2880.0,Month-to-month,Moderate,Retail
+Atlanta,5 Cabinets,132.0,6600.0,Month-to-month,Moderate,Retail
+Atlanta,10 kW,126.0,1260.0,12-36 months,Moderate,Retail
+Atlanta,25 kW,120.0,3000.0,12-36 months,Moderate,Retail
+Atlanta,50 kW,114.0,5700.0,12-36 months,Moderate,Retail
+Atlanta,100 kW,110.4,11040.0,12-36 months,Moderate,Retail
+Atlanta,250 kW,105.6,26400.0,12-36 months,Moderate,Retail
+Atlanta,500 kW,102.0,51000.0,12-36 months,Moderate,Retail
+Atlanta,1 MW,96.0,96000.0,36-120 months,Moderate,Wholesale
+Atlanta,2 MW,90.0,180000.0,36-120 months,Moderate,Wholesale
+Atlanta,5 MW,84.0,420000.0,36-120 months,Moderate,Wholesale
+Atlanta,10+ MW,78.0,780000.0,36-120 months,Moderate,Wholesale
+Portland,Single Rack,234.0,1170.0,Month-to-month,Moderate,Retail
+Portland,Quarter Cab,208.0,520.0,Month-to-month,Moderate,Retail
+Portland,Half Cab,182.0,910.0,Month-to-month,Moderate,Retail
+Portland,Full Cabinet,169.0,1690.0,Month-to-month,Moderate,Retail
+Portland,2 Cabinets,156.0,3120.0,Month-to-month,Moderate,Retail
+Portland,5 Cabinets,143.0,7150.0,Month-to-month,Moderate,Retail
+Portland,10 kW,136.5,1365.0,12-36 months,Moderate,Retail
+Portland,25 kW,130.0,3250.0,12-36 months,Moderate,Retail
+Portland,50 kW,123.5,6175.0,12-36 months,Moderate,Retail
+Portland,100 kW,119.6,11960.0,12-36 months,Moderate,Retail
+Portland,250 kW,114.4,28600.0,12-36 months,Moderate,Retail
+Portland,500 kW,110.5,55250.0,12-36 months,Moderate,Retail
+Portland,1 MW,104.0,104000.0,36-120 months,Moderate,Wholesale
+Portland,2 MW,97.5,195000.0,36-120 months,Moderate,Wholesale
+Portland,5 MW,91.0,455000.0,36-120 months,Moderate,Wholesale
+Portland,10+ MW,84.5,845000.0,36-120 months,Moderate,Wholesale
+New York,Single Rack,513.0,2565.0,Month-to-month,Moderate,Retail
+New York,Quarter Cab,456.0,1140.0,Month-to-month,Moderate,Retail
+New York,Half Cab,399.0,1995.0,Month-to-month,Moderate,Retail
+New York,Full Cabinet,370.5,3705.0,Month-to-month,Moderate,Retail
+New York,2 Cabinets,342.0,6840.0,Month-to-month,Moderate,Retail
+New York,5 Cabinets,313.5,15675.0,Month-to-month,Moderate,Retail
+New York,10 kW,299.25,2992.5,12-36 months,Moderate,Retail
+New York,25 kW,285.0,7125.0,12-36 months,Moderate,Retail
+New York,50 kW,270.75,13537.5,12-36 months,Moderate,Retail
+New York,100 kW,262.2,26220.0,12-36 months,Moderate,Retail
+New York,250 kW,250.8,62700.0,12-36 months,Moderate,Retail
+New York,500 kW,242.25,121125.0,12-36 months,Moderate,Retail
+New York,1 MW,228.0,228000.0,36-120 months,Moderate,Wholesale
+New York,2 MW,213.75,427500.0,36-120 months,Moderate,Wholesale
+New York,5 MW,199.5,997500.0,36-120 months,Moderate,Wholesale
+New York,10+ MW,185.25,1852500.0,36-120 months,Moderate,Wholesale
+London,Single Rack,576.0,2880.0,Month-to-month,Moderate,Retail
+London,Quarter Cab,512.0,1280.0,Month-to-month,Moderate,Retail
+London,Half Cab,448.0,2240.0,Month-to-month,Moderate,Retail
+London,Full Cabinet,416.0,4160.0,Month-to-month,Moderate,Retail
+London,2 Cabinets,384.0,7680.0,Month-to-month,Moderate,Retail
+London,5 Cabinets,352.0,17600.0,Month-to-month,Moderate,Retail
+London,10 kW,336.0,3360.0,12-36 months,Moderate,Retail
+London,25 kW,320.0,8000.0,12-36 months,Moderate,Retail
+London,50 kW,304.0,15200.0,12-36 months,Moderate,Retail
+London,100 kW,294.4,29440.0,12-36 months,Moderate,Retail
+London,250 kW,281.6,70400.0,12-36 months,Moderate,Retail
+London,500 kW,272.0,136000.0,12-36 months,Moderate,Retail
+London,1 MW,256.0,256000.0,36-120 months,Moderate,Wholesale
+London,2 MW,240.0,480000.0,36-120 months,Moderate,Wholesale
+London,5 MW,224.0,1120000.0,36-120 months,Moderate,Wholesale
+London,10+ MW,208.0,2080000.0,36-120 months,Moderate,Wholesale
+Frankfurt,Single Rack,504.0,2520.0,Month-to-month,Moderate,Retail
+Frankfurt,Quarter Cab,448.0,1120.0,Month-to-month,Moderate,Retail
+Frankfurt,Half Cab,392.0,1960.0,Month-to-month,Moderate,Retail
+Frankfurt,Full Cabinet,364.0,3640.0,Month-to-month,Moderate,Retail
+Frankfurt,2 Cabinets,336.0,6720.0,Month-to-month,Moderate,Retail
+Frankfurt,5 Cabinets,308.0,15400.0,Month-to-month,Moderate,Retail
+Frankfurt,10 kW,294.0,2940.0,12-36 months,Moderate,Retail
+Frankfurt,25 kW,280.0,7000.0,12-36 months,Moderate,Retail
+Frankfurt,50 kW,266.0,13300.0,12-36 months,Moderate,Retail
+Frankfurt,100 kW,257.6,25760.0,12-36 months,Moderate,Retail
+Frankfurt,250 kW,246.4,61600.0,12-36 months,Moderate,Retail
+Frankfurt,500 kW,238.0,119000.0,12-36 months,Moderate,Retail
+Frankfurt,1 MW,224.0,224000.0,36-120 months,Moderate,Wholesale
+Frankfurt,2 MW,210.0,420000.0,36-120 months,Moderate,Wholesale
+Frankfurt,5 MW,196.0,980000.0,36-120 months,Moderate,Wholesale
+Frankfurt,10+ MW,182.0,1820000.0,36-120 months,Moderate,Wholesale
+Singapore,Single Rack,810.0,4050.0,Month-to-month,Limited,Retail
+Singapore,Quarter Cab,720.0,1800.0,Month-to-month,Limited,Retail
+Singapore,Half Cab,630.0,3150.0,Month-to-month,Limited,Retail
+Singapore,Full Cabinet,585.0,5850.0,Month-to-month,Limited,Retail
+Singapore,2 Cabinets,540.0,10800.0,Month-to-month,Limited,Retail
+Singapore,5 Cabinets,495.0,24750.0,Month-to-month,Limited,Retail
+Singapore,10 kW,472.5,4725.0,12-36 months,Limited,Retail
+Singapore,25 kW,450.0,11250.0,12-36 months,Limited,Retail
+Singapore,50 kW,427.5,21375.0,12-36 months,Limited,Retail
+Singapore,100 kW,414.0,41400.0,12-36 months,Limited,Retail
+Singapore,250 kW,396.0,99000.0,12-36 months,Limited,Retail
+Singapore,500 kW,382.5,191250.0,12-36 months,Limited,Retail
+Singapore,1 MW,360.0,360000.0,36-120 months,Limited,Wholesale
+Singapore,2 MW,337.5,675000.0,36-120 months,Limited,Wholesale
+Singapore,5 MW,315.0,1575000.0,36-120 months,Limited,Wholesale
+Singapore,10+ MW,292.5,2925000.0,36-120 months,Limited,Wholesale
+Tokyo,Single Rack,684.0,3420.0,Month-to-month,Moderate,Retail
+Tokyo,Quarter Cab,608.0,1520.0,Month-to-month,Moderate,Retail
+Tokyo,Half Cab,532.0,2660.0,Month-to-month,Moderate,Retail
+Tokyo,Full Cabinet,494.0,4940.0,Month-to-month,Moderate,Retail
+Tokyo,2 Cabinets,456.0,9120.0,Month-to-month,Moderate,Retail
+Tokyo,5 Cabinets,418.0,20900.0,Month-to-month,Moderate,Retail
+Tokyo,10 kW,399.0,3990.0,12-36 months,Moderate,Retail
+Tokyo,25 kW,380.0,9500.0,12-36 months,Moderate,Retail
+Tokyo,50 kW,361.0,18050.0,12-36 months,Moderate,Retail
+Tokyo,100 kW,349.6,34960.0,12-36 months,Moderate,Retail
+Tokyo,250 kW,334.4,83600.0,12-36 months,Moderate,Retail
+Tokyo,500 kW,323.0,161500.0,12-36 months,Moderate,Retail
+Tokyo,1 MW,304.0,304000.0,36-120 months,Moderate,Wholesale
+Tokyo,2 MW,285.0,570000.0,36-120 months,Moderate,Wholesale
+Tokyo,5 MW,266.0,1330000.0,36-120 months,Moderate,Wholesale
+Tokyo,10+ MW,247.0,2470000.0,36-120 months,Moderate,Wholesale
+Amsterdam,Single Rack,495.0,2475.0,Month-to-month,Moderate,Retail
+Amsterdam,Quarter Cab,440.0,1100.0,Month-to-month,Moderate,Retail
+Amsterdam,Half Cab,385.0,1925.0,Month-to-month,Moderate,Retail
+Amsterdam,Full Cabinet,357.5,3575.0,Month-to-month,Moderate,Retail
+Amsterdam,2 Cabinets,330.0,6600.0,Month-to-month,Moderate,Retail
+Amsterdam,5 Cabinets,302.5,15125.0,Month-to-month,Moderate,Retail
+Amsterdam,10 kW,288.75,2887.5,12-36 months,Moderate,Retail
+Amsterdam,25 kW,275.0,6875.0,12-36 months,Moderate,Retail
+Amsterdam,50 kW,261.25,13062.5,12-36 months,Moderate,Retail
+Amsterdam,100 kW,253.0,25300.0,12-36 months,Moderate,Retail
+Amsterdam,250 kW,242.0,60500.0,12-36 months,Moderate,Retail
+Amsterdam,500 kW,233.75,116875.0,12-36 months,Moderate,Retail
+Amsterdam,1 MW,220.0,220000.0,36-120 months,Moderate,Wholesale
+Amsterdam,2 MW,206.25,412500.0,36-120 months,Moderate,Wholesale
+Amsterdam,5 MW,192.5,962500.0,36-120 months,Moderate,Wholesale
+Amsterdam,10+ MW,178.75,1787500.0,36-120 months,Moderate,Wholesale
