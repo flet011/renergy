@@ -1,0 +1,16 @@
+ixp_name,location,peak_traffic_tbps,connected_networks,data_centers_served,founding_year,governance,key_members,notes
+DE-CIX Frankfurt,"Frankfurt, Germany",17.5,1100,25,1995,Neutral non-profit,"All major ISPs, CDNs, clouds",World's largest by traffic; 17.5 Tbps peak
+AMS-IX Amsterdam,"Amsterdam, Netherlands",12.8,900,20,1997,Neutral non-profit,"European ISPs, Netflix, Google",Europe's second largest; carrier-neutral
+Equinix IX (Global),Global (65+ metros),45.0,2800,260,2000,Commercial,"All hyperscalers, ISPs, SaaS",Largest global footprint; 260+ locations
+LINX London,"London, UK",8.5,850,30,1994,Member association,"UK ISPs, content providers",UK's primary peering hub
+France-IX Paris,"Paris, France",7.2,650,18,2010,Neutral non-profit,"French ISPs, OVH, Orange",Growing French hub
+JPNAP Tokyo,"Tokyo, Japan",6.8,450,15,2001,Commercial,"Japanese ISPs, regional CDNs",Primary APAC peering point
+SIX Seattle,"Seattle, USA",4.5,350,12,1997,Non-profit,"Microsoft, Amazon, regional ISPs",Pacific Northwest hub
+CoreSite Any2 Exchange,US (10 metros),8.2,1200,28,2014,Commercial,"Enterprises, cloud on-ramps",US carrier-neutral peering
+NAPAfrica Johannesburg,"Johannesburg, South Africa",1.8,180,8,2012,Neutral non-profit,"African ISPs, Teraco",Africa's largest IX
+Megaport IX (Global),Global (850 locations),12.0,2500,850,2013,Commercial (SD-IX),"Enterprises, MSPs",Software-defined interconnection
+PacketFabric IX,US + International,3.5,800,50,2017,Commercial (NaaS),Cloud-native companies,API-driven peering
+SGIX Singapore,Singapore,5.2,420,22,2006,Neutral,"APAC ISPs, hyperscalers",Southeast Asia hub
+HKIX Hong Kong,Hong Kong,4.8,380,18,1995,Academic/neutral,"Chinese ISPs, regional providers",China gateway
+Netnod Stockholm,"Stockholm, Sweden",3.2,280,10,1996,Neutral non-profit,"Nordic ISPs, Spotify",Nordic hub
+PTT Metro São Paulo,"São Paulo, Brazil",9.5,2000,30,2004,Neutral non-profit,"Brazilian ISPs, regional CDNs",LatAm's largest; 2000+ ASNs
