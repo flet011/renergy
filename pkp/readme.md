@@ -169,33 +169,22 @@ Existing models fall short: - Behaviorism ignores inner context - Cognitive mode
 CAM synthesizes their strengths while accounting for emotional accumulation and real-time directional input.
  
 **3. Formal Model**
-3. Formal Model
-1
-I= {i , i , ..., i }
-1 2 n i ∈
-Let: - : Experience set - , : Impression valence - :
-1 2 n E= {e , e , ..., e }
-j [−1, 1] M
-Current moment/contextual state - c ∈
-∘ [−1, 1] S ∈
-: Choice affinity (emotional leaning) - ∘ R
-: Svengali
-force (intentional influence)
+
+I= {i , i , ..., i } 1 2 n i ∈.
+Let: Experience set, Impression valence: 1 2 n E= {e , e , ..., e }, j [−1, 1] M.
+Current moment/contextual state c: ∈ ∘ [−1, 1].
+S ∈: Choice affinity (emotional leaning) c∘: Svengali force (intentional influence)
+
 We calculate:
 W= i⋅
-∑n
-j
-j λ(m−m )
+∑nj j λ(m−m )
 j=1
-c =
-∘ tanh(αW )
-∘
-P (c = 1) = σ(β(c +
-γS ))∘
+c =∘ tanh(αW )∘
+P (c = 1) = σ(β(c + γS ))∘
+
 Where: - λ α β
 : decay rate of impression - : emotional sensitivity factor - γ σ(x) =
-: influence scaling factor - 1
-1+e−x
+: influence scaling factor: 1+e−x
 : sigmoid function
 : decision sharpness coefficient -
 
