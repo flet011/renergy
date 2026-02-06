@@ -1,0 +1,14 @@
+market,available_land_acres,avg_price_per_acre,typical_parcel_size_acres,zoning_timeline_months,power_availability,key_submarkets,recent_transactions,development_pipeline_mw,vacancy_rate_pct,notes
+Northern Virginia,450,850000,50,18,Constrained,"Loudoun County, Prince William",AWS Bristow $700M (2024),2500,2.5,85% of US internet; power queue 36 months
+Dallas/Fort Worth,1200,185000,100,12,Strong,"Richardson, Garland, Irving",Multiple hyperscale sites,1800,8.5,700% increase in large load requests; ERCOT
+Phoenix,800,220000,75,14,Moderate,"Chandler, Goodyear, Mesa",Google expansion,1200,6.2,45% YoY demand growth; solar potential
+Chicago,600,320000,40,16,Moderate,"Franklin Park, Elk Grove, Aurora",QTS expansion,950,7.1,PJM interconnection; growing AI demand
+Silicon Valley,120,2500000,15,24,Very Constrained,"Santa Clara, San Jose",Limited availability,400,3.8,Highest land costs; 48-month power queue
+Atlanta,950,145000,60,10,Strong,"Lithia Springs, Forest Park, Fulton",QTS 1.4M sqft,1100,11.2,Southeast connectivity hub; pro-business
+Portland/Oregon,500,175000,80,12,Excellent,"Hillsboro, Prineville","Apple, Facebook campuses",800,5.4,Cheapest power US ($0.048/kWh); 80% renewable
+Abilene/Texas,5000,25000,500,6,Abundant (new),Stargate campus,Oracle/OpenAI $100B,4500,0.0,Largest AI project globally; greenfield
+Wisconsin,1800,95000,150,10,Excellent,"Port Washington, Kenosha","Vantage $15B, Microsoft $3B",1800,1.2,902MW dedicated DC rate; 70%+ renewable
+Iowa,2200,65000,200,8,Excellent,"Council Bluffs, Waukee, Altoona","Google, Meta, Apple expansions",900,4.5,60%+ wind power; tax incentives
+London,80,5800000,10,30,Very Constrained,"Slough, Hayes, Docklands",Limited greenfield,350,10.0,Severe power constraints; retrofit focus
+Frankfurt,150,3200000,12,28,Constrained,"Frankfurt East, Offenbach",Hyperscale limited,450,7.8,European data hub; regulatory constraints
+Singapore,25,12000000,5,48,Moratorium,"Jurong, Tai Seng",Moratorium in place,100,4.0,60-month queue; moratorium since 2019
