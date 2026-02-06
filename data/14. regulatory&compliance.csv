@@ -1,0 +1,12 @@
+jurisdiction,permitting_timeline_months,environmental_review,power_approval_required,tax_incentives,restrictions,local_opposition,incentive_value_m,recent_policy_changes,sustainability_mandates,notes
+Northern Virginia (Loudoun),18,Standard NEPA,Yes (Dominion),Data center exemption,None,Minimal,150,GS-5 rate class (Jan 2027),Voluntary,Pro-DC policies; $850M tax break program
+California,24,CEQA required,Yes (CPUC),None,Water use limits,Moderate,0,Water restrictions tightened (2024),100% renewable by 2030,48-month power queue; stringent environmental
+Texas (ERCOT),12,Standard state,No (deregulated),Chapter 313 successor,None,Low,200,New DC incentive program (2025),None,Most DC-friendly; deregulated power
+Georgia,10,Standard state,Yes (Georgia Power),Sales tax exemption,None,Low,75,Expanded exemptions (2023),Voluntary,Lithia Springs cluster; pro-business
+Oregon,12,State + local,Yes (PGE),Strategic investment,Water use review,Moderate,100,ESEIA program renewed (2024),Renewable preferred,Cheapest power; 80% renewable already
+Wisconsin,10,Standard state,Yes (We Energies),Manufacturing credit,None,Low,180,Dedicated DC rate approved (2025),70% renewable target,902MW dedicated rate; strong incentives
+Iowa,8,Minimal,Yes (utility),Sales tax refund,None,Very Low,90,Extended refund program (2024),None (60%+ wind already),"Most aggressive incentives; Google, Meta, Apple"
+London/UK,30,EIA required,Yes (National Grid),None,Power capacity limits,High,0,Moratorium discussions (2024),Carbon neutral by 2030,42-month power queue; severe constraints
+Frankfurt/Germany,28,EU EIA,Yes (regulatory),Limited,Energy efficiency minimums,Moderate,25,Energy efficiency standards (2024),100% renewable by 2030,Strict EU regulations; retrofit preferred
+Singapore,48,BCA Green Mark,Yes (EMA),Pioneer status,Moratorium (2019-present),High (land scarcity),50,Moratorium extended indefinitely,Tropical DC certification,60-month queue; 4% vacancy; moratorium
+Netherlands (Amsterdam),26,EU EIA,Yes (TenneT),None,New builds restricted (2019),Very High,0,Partial moratorium (2019-2022),100% renewable required,Moratorium lifted 2022; tight restrictions remain
