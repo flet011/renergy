@@ -1,0 +1,11 @@
+provider,network_type,route_miles,pops,key_markets,dc_interconnects,bandwidth_capacity,specialization,major_dc_customers,notes
+Zayo Group,Fiber,134000,500,"US nationwide, Europe",1200,400G+ ready,"Long-haul fiber, metro dark fiber","Equinix, Digital Realty, CoreSite",Largest independent fiber; EQT/DigitalBridge owned
+Lumen (Level 3),Fiber + Transit,450000,800,"Americas, Europe, Asia",2500,100G-400G backbone,"Internet backbone, CDN hosting",All hyperscalers,"190,000 route miles intercity; Tier 1 transit"
+Cogent Communications,Fiber + Transit,57000,2800,"North America, Europe",8500,100G metro,"Metro fiber, enterprise connectivity","NetActuate, colocation providers",Most on-net buildings globally; low-cost transit
+Windstream Wholesale,Fiber,150000,350,US (rural + metro),800,100G+ waves,"Dark fiber, wavelength services","Hyperscalers, enterprises",Kinetic brand; focus on underserved markets
+Crown Castle Fiber,Metro Fiber,85000,200,Top 25 US metros,400,100G metro,"Metro dark fiber, small cell backhaul",Edge DC providers,Tower + fiber convergence
+Equinix Fabric,Virtual Interconnection,0,260,Global (65 metros),10000,1G-100G on-demand,"Virtual cross-connects, cloud on-ramps","All clouds, SaaS providers",Software-defined interconnection leader
+PacketFabric,NaaS Platform,200000,50,US + select international,300,1G-100G on-demand,"Automated provisioning, SD-WAN",Cloud-native companies,API-driven network-as-a-service
+Megaport,NaaS Platform,0,850,Global,2800,1Mbps-100G elastic,"Cloud connectivity, SD-WAN","Enterprises, MSPs",Software-defined interconnection; ASX-listed
+DE-CIX,Internet Exchange,0,45,"Europe, US, India",3000,30+ Tbps peak,"Neutral peering, cloud exchange","ISPs, content providers",World's largest IX by data throughput
+Console Connect (PCCW),NaaS Platform,230000,400,Asia-Pacific primary,1500,On-demand up to 100G,"APAC connectivity, cloud on-ramps","Asian hyperscalers, enterprises",PCCW Global backbone; strong APAC
