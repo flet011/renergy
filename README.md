@@ -29,6 +29,38 @@ A **real-time marketplace** connecting:
 
 ---
 
+## PROJECT STRUCTURE
+
+```
+PKP_renergy/
+├── README.md                  # This file — executive summary & business plan
+├── data/                      # 17 OSINT-sourced databases (CSV/MD)
+├── dc_zillow/                 # DCZillow React app — marketplace frontend
+│   ├── src/components/        # React UI (facility list, market intel, GPU compare, pipeline)
+│   ├── src/data/              # Curated data embedded from data/ for the app
+│   └── README.md              # App-specific docs, setup, and architecture
+└── pkp/                       # PKP framework — schema, docs, node templates
+    ├── docs/                  # Ontology, patterns, versioning, RS1-6 decision loop
+    └── PKP_starter_pack_arch/ # Node architecture files (ALEC, VERI, policy, security)
+```
+
+### DCZillow (Intelligence Platform Frontend)
+
+The `dc_zillow/` directory contains the **React web application** — a role-based decision engine that transforms OSINT data into actionable intelligence. It provides:
+
+- **3 role-based dashboards**: Operator (Supply), Buyer (Demand), Investor (Capital)
+- **AI intelligence layer**: Actionable insights with urgency levels, recommended actions, and projected impact
+- **Interactive tooltips**: 40+ metric definitions available on hover across every page
+- **Smart capacity finder**: Ranked facility recommendations based on configurable needs
+- **Investment scoring**: Composite market attractiveness and operator valuation scorecards
+- **TCO calculator**: Cross-market cost comparison for capacity planning
+- **Contact forms**: Request quotes, schedule tours, contact operators
+- **Deep-dive links**: Real-time research links for every insight, market, and operator
+
+See [`dc_zillow/README.md`](dc_zillow/README.md) for setup instructions, architecture details, demo accounts, and feature documentation.
+
+---
+
 ## DATABASE ASSETS COMPILED
 
 ### 17 Complete Databases (OSINT-sourced)
