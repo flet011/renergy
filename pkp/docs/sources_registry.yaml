@@ -1,0 +1,9 @@
+capital_markets:
+  prices: [yahoo, iex, alpaca]
+  filings: [sec_edgar]
+  news: [reuters, bloomberg, google_news]
+security:
+  ops: [pagerduty, splunk]
+  intel: [cisa, nist, mitre]
+policy:
+  regs: [europa.eu, whitehouse.gov]

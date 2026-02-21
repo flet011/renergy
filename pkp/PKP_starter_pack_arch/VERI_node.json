@@ -1,0 +1,78 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \{\
+  "meta": \{\
+    "schema_version": "1.0.0",\
+    "domain": "capital_markets",\
+    "created_at": "2025-08-18",\
+    "author": "pkp",\
+    "confidence": 0.7\
+  \},\
+  "node": \{\
+    "id": "VERI",\
+    "name": "Veritone, Inc.",\
+    "type": "company",\
+    "layer": "platform",\
+    "thesis": "aiWARE and related software assets aim to monetize enterprise media/government workflows; execution hinges on software growth outpacing consolidated losses.",\
+    "time_horizon": "12m"\
+  \},\
+  "context": \{\
+    "picks_shovels": [\
+      \{"id":"AMZN","name":"AWS","role":"cloud_infra","edge_type":"runs_on","weight":0.6\},\
+      \{"id":"MSFT","name":"Azure","role":"cloud_infra","edge_type":"runs_on","weight":0.5\},\
+      \{"id":"PANW","name":"Palo Alto Networks","role":"security","edge_type":"enables","weight":0.3\},\
+      \{"id":"SNOW","name":"Snowflake","role":"data_analytics","edge_type":"enables","weight":0.3\}\
+    ],\
+    "edges": [\
+      \{"from":"VERI","to":"AMZN","type":"depends_on","weight":0.6\},\
+      \{"from":"VERI","to":"MSFT","type":"depends_on","weight":0.5\}\
+    ],\
+    "undercurrents": [\
+      \{"name":"ai_budget_cycling","direction":"bullish","rationale":"public sector & enterprise AI spend expanding"\},\
+      \{"name":"unit_economics_pressure","direction":"bearish","rationale":"flat revenue YoY with rising losses in Q2\'9225 per media coverage"\}\
+    ]\
+  \},\
+  "signals": \{\
+    "metrics": [\
+      \{"name":"revenue_q2_2025","unit":"$M","current":24.0,"thresholds":\{"bull":">=27","bear":"<22"\}\},\
+      \{"name":"software_growth_ex_Hire","unit":"%yoy","current":45\},\
+      \{"name":"net_loss_q2_2025","unit":"$M","current":26.8\}\
+    ],\
+    "events": [\
+      \{"date":"2025-08-07","type":"earnings_release","impact":"mixed","source":"turn0search2"\},\
+      \{"date":"2025-08-08","type":"coverage_note_losses","impact":"-","source":"turn0search9"\}\
+    ]\
+  \},\
+  "news": [\
+    \{"date":"2025-08-07","headline":"Veritone Q2 2025: $24M revenue; software growth called out","sentiment":"+","source":"turn0search2"\},\
+    \{"date":"2025-08-08","headline":"Media flags rising net loss despite revenue","sentiment":"-","source":"turn0search9"\},\
+    \{"date":"2025-08-08","headline":"Earnings-call recap highlights 45% software growth, public sector strength","sentiment":"+","source":"turn0search7"\}\
+  ],\
+  "risks": [\
+    \{"name":"cash_burn","likelihood":"med","severity":"high","leading_indicators":["rising losses","equity issuance"]\},\
+    \{"name":"customer_concentration","likelihood":"med","severity":"med"\},\
+    \{"name":"cloud_cost_inflation","likelihood":"med","severity":"med"\}\
+  ],\
+  "actions": [\
+    \{"type":"monitor","what":"software_growth_ex_Hire","rule":"quarterly>=30%","notify":"slack:#veri"\},\
+    \{"type":"alert","what":"net_loss_q2_2025>$25M","rule":"quarterly_check","notify":"slack:#risk"\},\
+    \{"type":"monitor","what":"public_sector_contracts","rule":"daily_news_scan","notify":"email:alerts@desk"\}\
+  ],\
+  "valuation": \{\
+    "method":"comp_table",\
+    "inputs":\{"peers":["AI","PLTR","PATH"],"multiples":\{"EV/Sales_FY+1":[2,6]\}\},\
+    "range":\{"bear":1.5,"base":2.5,"bull":4.0\}\
+  \},\
+  "sources": [\
+    \{"name":"Veritone Q2 2025 press release","url":"turn0search2"\},\
+    \{"name":"Investing.com loss summary","url":"turn0search9"\},\
+    \{"name":"Earnings call recap","url":"turn0search7"\},\
+    \{"name":"Yahoo recap","url":"turn0search14"\}\
+  ],\
+  "custom": \{\}\
+\}}

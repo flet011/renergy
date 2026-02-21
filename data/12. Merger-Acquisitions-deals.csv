@@ -1,0 +1,14 @@
+deal,buyer,seller,value_b,announcement_date,deal_type,capacity_mw,markets,rationale,status
+Aligned Data Centers,BlackRock GIP/MGX,Warburg Pincus,40.0,2025-01,Platform Acquisition,1500,US (6 markets),AI-ready hyperscale portfolio,Announced
+AirTrunk,Blackstone,Macquarie,24.0,2024-09,Platform Acquisition,1200,Asia-Pacific (5 countries),APAC hyperscale leader,Closed
+Blue Owl + Meta JV,Blue Owl Capital,N/A (Joint Venture),27.0,2024-11,Joint Venture,2000,US hyperscale sites,Hyperscaler build-to-suit partnership,Active
+CyrusOne,KKR + GIC,Public (delisting),15.0,2021-11,Take-Private,1100,US + Europe,Colocation consolidation,Closed
+QTS Realty Trust,Blackstone,Public (REIT),10.0,2021-06,Take-Private,950,US (20+ facilities),Hyperscale platform,Closed
+Switch Inc.,DigitalBridge,Public,11.0,2022-03,Take-Private,800,"Las Vegas, Reno, Atlanta",Tier IV resilient infrastructure,Closed
+CoreSite Realty,American Tower,Public (REIT),10.1,2021-07,Strategic Acquisition,450,US tier-1 metros,Tower + DC convergence,Closed
+Cyxtera,Stonepeak,Medina Capital,3.4,2023-04,Distressed Acquisition,600,Americas + Europe,Restructuring + edge focus,Closed
+Iron Mountain Data Centers,IPI Partners,Iron Mountain Inc.,1.3,2023-01,Carve-Out,200,US (9 cities),Edge + colocation,Closed
+EdgeConneX (Stake),Stonepeak,EQT,2.5,2024-05,Stake Sale,350,North America edge,Edge DC consolidation,Closed
+T5 Data Centers,CDPQ,Columbia Property Trust,2.15,2021-05,Portfolio Acquisition,280,"US (Atlanta, Portland)",Sustainable infrastructure,Closed
+Scala Data Centers,Brookfield,Patria Investments,1.8,2023-08,Platform Acquisition,300,Brazil (Sao Paulo),LatAm expansion,Closed
+DataBank,Colony Capital,C7 Data Centers,2.4,2020-12,Platform Acquisition,180,US edge markets,Edge consolidation,Closed

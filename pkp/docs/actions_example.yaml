@@ -1,0 +1,5 @@
+alerts:
+  - name: guidance_cut_soun
+    node: SOUN
+    rule: "news_contains('guidance cut')"
+    notify: "slack:#markets"

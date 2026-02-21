@@ -1,0 +1,16 @@
+ix_name,operator,market,country,asn,connected_networks,peak_traffic_tbps,port_speeds,locations,facility_count,pricing_1g_monthly,pricing_10g_monthly,pricing_100g_monthly,founded_year,features,website,status
+DE-CIX New York,DE-CIX,New York,USA,6695.0,420,4.2,"1G,10G,100G,400G","165 Halsey, 32 Avenue of the Americas, 111 8th Ave",8,250,750,3500,2013,"Microsoft peering, cloud onramps, DDoS protection",https://de-cix.net/en/locations/new-york,Active
+DE-CIX Dallas,DE-CIX,Dallas,USA,6695.0,180,1.8,"1G,10G,100G,400G","1950 N Stemmons Freeway, Infomart Dallas",3,250,750,3500,2016,"Cloud exchange, peering LAN",https://de-cix.net/en/locations/dallas,Active
+Equinix IX Ashburn,Equinix,Northern Virginia,USA,24115.0,350,6.8,"1G,10G,100G,400G","DC2, DC10, DC11, DC15 Ashburn",12,300,900,4200,2000,"Largest US IX, multicast, route servers",https://www.equinix.com/interconnection/internet-exchange,Active
+Equinix IX Silicon Valley,Equinix,Silicon Valley,USA,24115.0,285,4.5,"1G,10G,100G,400G","SV1, SV5, SV10, SV11 San Jose/Santa Clara",8,300,900,4200,1999,"Tech company dense, Google/Facebook peering",https://www.equinix.com/interconnection/internet-exchange,Active
+CoreSite Any2 Exchange,CoreSite,Los Angeles,USA,6939.0,220,2.8,"1G,10G,100G","One Wilshire, CoreSite LA1/LA2",4,200,600,2800,2001,"West coast anchor, content dense",https://www.coresite.com/interconnection/peering-exchanges,Active
+NYIIX,Telehouse,New York,USA,13538.0,165,2.2,"1G,10G,100G","60 Hudson Street, 32 Avenue of the Americas",3,175,500,2200,1997,"Oldest US IX, financial services focused",https://www.nyiix.net,Active
+Seattle Internet Exchange (SIX),WA-IX,Seattle,USA,33108.0,380,3.2,"1G,10G,100G","Westin Building, Sabey Intergate",5,150,450,2000,1997,"Pacific Northwest anchor, Microsoft HQ proximity",https://www.seattleix.net,Active
+Chicago Internet Exchange (CHI-IX),CHI-IX,Chicago,USA,40633.0,145,1.5,"1G,10G,100G","350 E Cermak, 600 S Federal",3,175,525,2400,2002,"Midwest anchor, financial services",https://www.chi-ix.net,Active
+CIX-NoVA,Community IX,Northern Virginia,USA,,45,0.8,"1G,10G,100G","Ashburn, Reston data centers",4,125,375,1600,2025,"New entrant, competitive pricing",https://communityix.net,Active
+Omaha IX,1623 Farnam,Omaha,USA,,65,0.4,"1G,10G,100G","1623 Farnam Street, Omaha",1,100,300,1200,2020,"Midwest regional, carrier-neutral",https://1623farnam.com,Active
+DE-CIX Frankfurt,DE-CIX,Frankfurt,Germany,6695.0,1100,18.5,"1G,10G,100G,400G",Multiple Frankfurt facilities,35,250,750,3500,1995,World's largest IX by connected networks,https://de-cix.net/en/locations/frankfurt,Active
+AMS-IX,AMS-IX,Amsterdam,Netherlands,1200.0,950,14.2,"1G,10G,100G,400G",Multiple Amsterdam facilities,18,295,850,3800,1997,"Europe's second largest, cloud exchange",https://www.ams-ix.net,Active
+LINX,LINX,London,UK,5459.0,920,12.8,"1G,10G,100G,400G","Equinix LD5, Telehouse Docklands, others",22,275,825,3600,1994,"UK's largest, financial services focus",https://www.linx.net,Active
+Singapore Internet Exchange (SGIX),SGIX,Singapore,Singapore,24482.0,280,3.5,"1G,10G,100G","Equinix SG1, Global Switch, Telin",8,350,1050,4500,2009,"APAC hub, submarine cable landing",https://www.sgix.sg,Active
+JPNAP Tokyo,JPNAP,Tokyo,Japan,7527.0,210,4.8,"1G,10G,100G","Equinix TY, NTT facilities",6,400,1200,5000,2001,"Japan's largest, enterprise focus",https://www.jpnap.net,Active
